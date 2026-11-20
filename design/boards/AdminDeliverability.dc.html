@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Admin deliverability</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>/*type2*//*dense2*/
+body{margin:0;background:#0A0B10;color:#ECEEF3;font-family:Geist,system-ui,sans-serif}
+a{color:#A9B6FF}a:hover{color:#C9D1FF}
+</style>
+</helmet>
+<div style="display: flex; flex-wrap: wrap; min-height: 900px; background: #07080C">
+<nav aria-label="Apps" style="flex: 0 0 68px; display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 12px 0; background: #07080C; border-right: 1px solid #1E2129; box-sizing: border-box">
+<a href="Main.dc.html" aria-label="Ortus home" style="width: 34px; height: 34px; margin-bottom: 10px; border-radius: 10px; background: {{accent}}; color: #0A0B10; display: flex; align-items: center; justify-content: center; font-weight: 700; text-decoration: none"><svg width="20" height="20" viewBox="0 0 48 48" aria-hidden="true"><g fill="currentColor"><path d="M22 30 L4 30 A18 18 0 0 1 22 12 Z"/><path d="M26 30 L26 12 A18 18 0 0 1 44 30 Z"/><rect x="4" y="34" width="40" height="5" rx="2.5"/></g></svg></a>
+<a href="Main.dc.html" aria-label="Mail" style="position: relative; width: 52px; display: flex; flex-direction: column; align-items: center; gap: 3px; padding: 7px 0; border-radius: 12px; text-decoration: none; font-size: 11px; color: #9198A8"><span aria-hidden="true" style="width: 30px; height: 30px; flex: none; border-radius: 9px; background: linear-gradient(155deg, #1B2350, #0B0D14); box-shadow: inset 0 1px 0 rgba(255,255,255,.08); display: flex; align-items: center; justify-content: center"><svg width="17" height="17" viewBox="0 0 48 48"><rect x="5" y="11" width="38" height="27" rx="6" fill="#8EA2FF"/><path d="M9 16 L24 27 L39 16" fill="none" stroke="#ECEEF3" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Mail</a>
+<a href="WebChat.dc.html" aria-label="Chat" style="position: relative; width: 52px; display: flex; flex-direction: column; align-items: center; gap: 3px; padding: 7px 0; border-radius: 12px; text-decoration: none; font-size: 11px; color: #9198A8"><span aria-hidden="true" style="width: 30px; height: 30px; flex: none; border-radius: 9px; background: linear-gradient(155deg, #1B2350, #0B0D14); box-shadow: inset 0 1px 0 rgba(255,255,255,.08); display: flex; align-items: center; justify-content: center"><svg width="17" height="17" viewBox="0 0 48 48"><circle cx="25" cy="22" r="16" fill="#8EA2FF"/><path d="M12 31 L7 42 L20 36 Z" fill="#8EA2FF"/><circle cx="18" cy="22" r="2.4" fill="#ECEEF3"/><circle cx="25" cy="22" r="2.4" fill="#ECEEF3"/><circle cx="32" cy="22" r="2.4" fill="#ECEEF3"/></svg></span>Chat<span style="position: absolute; right: 8px; top: 5px; width: 7px; height: 7px; border-radius: 50%; background: {{accent}}"></span></a>
+<a href="WebCalendar.dc.html" aria-label="Calendar" style="position: relative; width: 52px; display: flex; flex-direction: column; align-items: center; gap: 3px; padding: 7px 0; border-radius: 12px; text-decoration: none; font-size: 11px; color: #9198A8"><span aria-hidden="true" style="width: 30px; height: 30px; flex: none; border-radius: 9px; background: linear-gradient(155deg, #0E2F2E, #0B0D14); box-shadow: inset 0 1px 0 rgba(255,255,255,.08); display: flex; align-items: center; justify-content: center"><svg width="17" height="17" viewBox="0 0 48 48"><rect x="6" y="8" width="36" height="34" rx="7" fill="#4FD1C5"/><path d="M6 15 A7 7 0 0 1 13 8 H35 A7 7 0 0 1 42 15 V18 H6 Z" fill="#ECEEF3"/><rect x="27" y="27" width="8" height="8" rx="2" fill="#0B0D14"/></svg></span>Calendar</a>
+<a href="WebDrive.dc.html" aria-label="Drive" style="position: relative; width: 52px; display: flex; flex-direction: column; align-items: center; gap: 3px; padding: 7px 0; border-radius: 12px; text-decoration: none; font-size: 11px; color: #9198A8"><span aria-hidden="true" style="width: 30px; height: 30px; flex: none; border-radius: 9px; background: linear-gradient(155deg, #3A2412, #0B0D14); box-shadow: inset 0 1px 0 rgba(255,255,255,.08); display: flex; align-items: center; justify-content: center"><svg width="17" height="17" viewBox="0 0 48 48"><path d="M24 7 L43 17 L24 27 L5 17 Z" fill="#ECEEF3"/><path d="M5 25 L24 35 L43 25" fill="none" stroke="#F5A35C" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 32 L24 42 L43 32" fill="none" stroke="#F5A35C" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" opacity=".55"/></svg></span>Drive</a>
+<a href="WebDocEditor.dc.html" aria-label="Docs" style="position: relative; width: 52px; display: flex; flex-direction: column; align-items: center; gap: 3px; padding: 7px 0; border-radius: 12px; text-decoration: none; font-size: 11px; color: #9198A8"><span aria-hidden="true" style="width: 30px; height: 30px; flex: none; border-radius: 9px; background: linear-gradient(155deg, #3A2412, #0B0D14); box-shadow: inset 0 1px 0 rgba(255,255,255,.08); display: flex; align-items: center; justify-content: center"><svg width="17" height="17" viewBox="0 0 48 48"><path d="M10 9 A4 4 0 0 1 14 5 H28 L38 15 V39 A4 4 0 0 1 34 43 H14 A4 4 0 0 1 10 39 Z" fill="#F5A35C"/><path d="M28 5 V15 H38 Z" fill="#ECEEF3" opacity=".7"/><rect x="16" y="22" width="16" height="3.5" rx="1.75" fill="#ECEEF3"/><rect x="16" y="29" width="16" height="3.5" rx="1.75" fill="#ECEEF3"/><rect x="16" y="36" width="9" height="3.5" rx="1.75" fill="#ECEEF3"/></svg></span>Docs</a>
+<a href="WebTasks.dc.html" aria-label="Tasks" style="position: relative; width: 52px; display: flex; flex-direction: column; align-items: center; gap: 3px; padding: 7px 0; border-radius: 12px; text-decoration: none; font-size: 11px; color: #9198A8"><span aria-hidden="true" style="width: 30px; height: 30px; flex: none; border-radius: 9px; background: linear-gradient(155deg, #0E2F2E, #0B0D14); box-shadow: inset 0 1px 0 rgba(255,255,255,.08); display: flex; align-items: center; justify-content: center"><svg width="17" height="17" viewBox="0 0 48 48"><path d="M6 24 A18 18 0 0 1 24 6 H42 V24 A18 18 0 0 1 24 42 H6 Z" fill="#4FD1C5"/><path d="M15 24 L21.5 30.5 L33 19" fill="none" stroke="#ECEEF3" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Tasks</a>
+<span style="width: 28px; height: 1px; margin: 4px 0; background: #262A35"></span>
+<a href="AdminDomains.dc.html" aria-label="Admin" aria-current="page" style="position: relative; width: 52px; display: flex; flex-direction: column; align-items: center; gap: 3px; padding: 7px 0; border-radius: 12px; text-decoration: none; font-size: 11px; background: #1E2230; color: {{accent}}; font-weight: 600"><span aria-hidden="true" style="width: 30px; height: 30px; flex: none; border-radius: 9px; background: linear-gradient(155deg, #3A1616, #0B0D14); box-shadow: inset 0 1px 0 rgba(255,255,255,.08); display: flex; align-items: center; justify-content: center"><svg width="17" height="17" viewBox="0 0 48 48"><path d="M24 4 L41 10 V23 C41 33 34 40 24 44 C14 40 7 33 7 23 V10 Z" fill="#FF7A6E"/><g transform="translate(15 15) scale(.375)"><path d="M22 30 L4 30 A18 18 0 0 1 22 12 Z" fill="#ECEEF3"/><path d="M26 30 L26 12 A18 18 0 0 1 44 30 Z" fill="#ECEEF3"/><rect x="4" y="34" width="40" height="5" rx="2.5" fill="#ECEEF3"/></g></svg></span>Admin</a>
+<a href="AppSwitcher.dc.html" aria-label="All apps" style="width: 52px; display: flex; flex-direction: column; align-items: center; gap: 3px; padding: 7px 0; border-radius: 12px; text-decoration: none; font-size: 11px; color: #9198A8"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><rect x="14" y="14" width="6" height="6" rx="1"/></svg>All apps</a>
+<span style="flex: 1"></span>
+<a href="WebNotifications.dc.html" aria-label="Notifications, 9 unread" style="position: relative; width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; text-decoration: none; color: #9198A8"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9M10 21h4"/></svg><span style="position: absolute; right: 6px; top: 6px; width: 8px; height: 8px; border-radius: 50%; background: #FF7A6E"></span></a>
+<a href="WebPersonal.dc.html" aria-label="My settings" style="width: 36px; height: 36px; margin-top: 6px; border-radius: 12px; background: #DDE3F8; color: #0A0B10; font-size: 13px; font-weight: 700; display: flex; align-items: center; justify-content: center; text-decoration: none; ">TB</a>
+</nav>
+<div style="flex: 999 1 560px; min-width: 0">
+<div style="display: flex; flex-direction: column; min-height: 900px; background: #0A0B10; color: #ECEEF3; font-family: Geist, system-ui, sans-serif; font-size: 15px">
+  <header style="display: flex; align-items: center; gap: 12px; padding: 14px 24px; border-bottom: 1px solid #1E2129">
+        <span style="font-weight: 600">Admin</span>
+    <span style="font-size: 13px; padding: 3px 10px; border-radius: 7px; background: #1E2230; color: #C3C8D4">Ministry of [Name]</span>
+    <span style="flex: 1"></span>
+    <a href="Main.dc.html" style="font-size: 14px; text-decoration: none">Back to mail</a>
+  </header>
+  <div style="flex: 1; display: flex; flex-wrap: wrap">
+    <nav aria-label="Admin" style="flex: 1 1 220px; max-width: 236px; padding: 20px 12px; display: flex; flex-direction: column; gap: 4px; box-sizing: border-box">
+      <sc-for list="{{nav}}" as="n" hint-placeholder-count="9">
+        <a href="{{n.href}}" style="{{n.style}}"><span>{{n.name}}</span></a>
+      </sc-for>
+    </nav>
+
+    <main style="flex: 999 1 640px; min-width: 0; padding: 28px 24px 28px 12px; display: flex; flex-direction: column; gap: 20px; box-sizing: border-box; max-width: 1180px">
+      <div style="display: flex; align-items: flex-end; gap: 12px; flex-wrap: wrap">
+        <div style="flex: 1; min-width: 240px; display: flex; flex-direction: column; gap: 4px">
+          <h1 style="margin: 0; font-size: 26px; font-weight: 600; letter-spacing: -.02em">Deliverability</h1>
+          <span style="color: #9198A8">Is our mail getting through, and is anyone spoofing us?</span>
+        </div>
+        <div style="display: flex; gap: 2px; padding: 3px; border-radius: 12px; background: #13151C; border: 1px solid #262A35">
+          <button style="height: 34px; padding: 0 14px; border-radius: 9px; border: 0; background: transparent; color: #9198A8; font: 500 13px Geist, sans-serif">24 h</button>
+          <button style="height: 34px; padding: 0 14px; border-radius: 9px; border: 0; background: #1E2230; color: #ECEEF3; font: 600 13px Geist, sans-serif">14 days</button>
+          <button style="height: 34px; padding: 0 14px; border-radius: 9px; border: 0; background: transparent; color: #9198A8; font: 500 13px Geist, sans-serif">90 days</button>
+        </div>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 16px">
+        <sc-for list="{{kpis}}" as="k" hint-placeholder-count="5">
+          <div style="padding: 20px 24px; border-radius: 16px; background: #11131A; border: 1px solid #1E2129; display: flex; flex-direction: column; gap: 6px">
+            <span style="font-size: 13px; font-weight: 500; color: #9198A8">{{k.k}}</span>
+            <span style="font-size: 24px; font-weight: 600; letter-spacing: -.02em">{{k.v}}</span>
+            <span style="{{k.dStyle}}">{{k.d}}</span>
+          </div>
+        </sc-for>
+      </div>
+
+      <section aria-labelledby="out-h" style="padding: 24px; border-radius: 18px; background: #11131A; border: 1px solid #1E2129; display: flex; flex-direction: column; gap: 16px">
+        <div style="display: flex; align-items: center; gap: 16px; flex-wrap: wrap">
+          <h2 id="out-h" style="margin: 0; flex: 1; font-size: 16px; font-weight: 600">Outbound per day</h2>
+          <span style="display: flex; align-items: center; gap: 6px; font-size: 13px; color: #C3C8D4"><span style="width: 10px; height: 10px; border-radius: 3px; background: {{accent}}"></span>Delivered</span>
+          <span style="display: flex; align-items: center; gap: 6px; font-size: 13px; color: #C3C8D4"><span style="width: 10px; height: 10px; border-radius: 3px; background: #F5A35C"></span>Deferred</span>
+          <span style="display: flex; align-items: center; gap: 6px; font-size: 13px; color: #C3C8D4"><span style="width: 10px; height: 10px; border-radius: 3px; background: #FF7A6E"></span>Bounced</span>
+        </div>
+        <div role="img" aria-label="Outbound mail per day for 14 days, delivered steady with a deferral spike on Nov 12" style="height: 140px; display: flex; align-items: flex-end; gap: 8px; border-bottom: 1px solid #262A35">
+          <sc-for list="{{bars}}" as="b" hint-placeholder-count="14">
+            <div style="flex: 1; display: flex; flex-direction: column; justify-content: flex-end; gap: 1px; height: 100%">
+              <span style="{{b.bounce}}"></span><span style="{{b.defer}}"></span><span style="{{b.ok}}"></span>
+            </div>
+          </sc-for>
+        </div>
+        <div style="display: flex; justify-content: space-between; font-size: 13px; color: #8A91A1"><span>5 Nov</span><span>12 Nov · Gmail rate-limited new IP</span><span>Today</span></div>
+      </section>
+
+      <div style="display: flex; gap: 16px; flex-wrap: wrap">
+        <section aria-labelledby="dest-h" style="flex: 1 1 360px; min-width: 0; padding: 24px; border-radius: 18px; background: #11131A; border: 1px solid #1E2129; display: flex; flex-direction: column; gap: 8px">
+          <h2 id="dest-h" style="margin: 0 0 8px; font-size: 16px; font-weight: 600">By receiving provider</h2>
+          <sc-for list="{{dest}}" as="d" hint-placeholder-count="4">
+            <div style="display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 2fr) 70px; gap: 16px; align-items: center; min-height: 44px">
+              <span style="font-weight: 500">{{d.n}}</span>
+              <span style="height: 6px; border-radius: 3px; background: #1E2230"><span style="{{d.bar}}"></span></span>
+              <span style="font-size: 14px; font-variant-numeric: tabular-nums; color: #C3C8D4; text-align: right">{{d.p}}</span>
+            </div>
+          </sc-for>
+        </section>
+        <section aria-labelledby="dmarc-h" style="flex: 1 1 360px; min-width: 0; padding: 24px; border-radius: 18px; background: #11131A; border: 1px solid #1E2129; display: flex; flex-direction: column; gap: 8px">
+          <h2 id="dmarc-h" style="margin: 0 0 8px; font-size: 16px; font-weight: 600">Who sends as ministry.example</h2>
+          <sc-for list="{{sources}}" as="s" hint-placeholder-count="4">
+            <div style="display: flex; align-items: center; gap: 14px; padding: 10px 16px; border-radius: 14px; background: #161922">
+              <span style="flex: 1; font-weight: 500">{{s.n}}</span>
+              <span style="font-size: 14px; font-variant-numeric: tabular-nums; color: #C3C8D4">{{s.c}}</span>
+              <span style="{{s.style}}">{{s.r}}</span>
+            </div>
+          </sc-for>
+        </section>
+      </div>
+    </main>
+  </div>
+</div>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#8EA2FF","options":["#8EA2FF","#4FD1C5","#C6F06B","#F5A35C"]},"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const accent = this.props.accent ?? '#8EA2FF';
+    const nav = [
+      ['Overview', 'MobileAdmin.dc.html'], ['Domains', 'AdminDomains.dc.html'], ['Users & groups', 'AdminUsers.dc.html'], ['Deliverability', '#', true],
+      ['Sovereignty & compliance', 'AdminSovereignty.dc.html'], ['Storage & quotas', '#'], ['Branding', '#'], ['Migrations', '#'], ['Audit log', '#']
+    ].map(([name, href, a]) => ({ name, href, style: 'display: flex; align-items: center; height: 40px; padding: 0 12px; border-radius: 10px; text-decoration: none; color: #ECEEF3; ' + (a ? 'background: #1E2230; font-weight: 600; box-shadow: inset 2px 0 0 ' + accent : '') }));
+    const good = 'font-size: 13px; color: #6FE0D5', warn = 'font-size: 13px; color: #F5B57A';
+    const kpis = [
+      { k: 'Delivered', v: '99.2%', d: '+0.4 vs previous 14 days', g: true },
+      { k: 'Sent', v: '18,430', d: 'avg 1,316 / day', g: true },
+      { k: 'Bounced', v: '0.5%', d: '93 hard bounces', g: true },
+      { k: 'In queue', v: '12', d: 'oldest 6 min · retrying', g: false }
+    ].map((k) => ({ ...k, dStyle: k.g ? good : warn }));
+    const data = [[88, 2, 1], [92, 1, 1], [80, 2, 1], [95, 1, 0], [90, 2, 1], [60, 1, 0], [55, 1, 0], [86, 22, 2], [91, 6, 1], [94, 2, 1], [89, 1, 1], [58, 1, 0], [52, 1, 0], [70, 1, 0]];
+    const seg = (h, c) => 'display: block; height: ' + (h * 1.2) + 'px; border-radius: 3px; background: ' + c;
+    const bars = data.map(([o, d, b]) => ({ ok: seg(o, accent), defer: seg(d, '#F5A35C'), bounce: seg(b, '#FF7A6E') }));
+    const dest = [['Gmail', 99.4], ['Microsoft 365', 98.9], ['Yahoo / AOL', 99.1], ['Corporate servers', 99.6]].map(([n, p]) => ({
+      n, p: p + '%', bar: 'display: block; height: 6px; border-radius: 3px; width: ' + p + '%; background: ' + (p < 99 ? '#F5A35C' : accent)
+    }));
+    const ok = 'font-size: 13px; font-weight: 500; padding: 2px 8px; border-radius: 7px; background: rgba(79,209,197,.12); color: #6FE0D5';
+    const bad = 'font-size: 13px; font-weight: 500; padding: 2px 8px; border-radius: 7px; background: rgba(255,122,110,.12); color: #FF9A92';
+    const sources = [
+      { n: 'Our servers', ip: '203.0.113.10–12', c: '17,902', r: 'Pass', style: ok },
+      { n: 'Alerting system', ip: '198.51.100.24', c: '512', r: 'Pass', style: ok },
+      { n: 'Newsletter tool', ip: '192.0.2.40', c: '16', r: 'DKIM fail', style: bad },
+      { n: 'Unknown · 3 countries', ip: '14 addresses', c: '231', r: 'Spoofing', style: bad }
+    ];
+    return { accent, nav, kpis, bars, dest, sources };
+  }
+}
+</script>
+</body>
+</html>

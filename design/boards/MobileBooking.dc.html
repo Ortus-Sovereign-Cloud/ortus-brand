@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Book on mobile</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>/*type2*/
+body{margin:0}
+a{color:#A9B6FF}a:hover{color:#C9D1FF}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; position: relative; overflow: hidden; background: #0A0B10; color: #ECEEF3; font-family: Geist, system-ui, sans-serif; font-size: 15px; display: flex; flex-direction: column">
+  <div style="padding: 20px 16px 12px; display: flex; flex-direction: column; gap: 14px">
+    <div style="display: flex; align-items: center; gap: 12px">
+      <div style="width: 48px; height: 48px; border-radius: 16px; background: #DDE3F8; color: #0A0B10; display: flex; align-items: center; justify-content: center; font-weight: 700">M</div>
+      <div style="display: flex; flex-direction: column"><span style="font-size: 13px; color: #9198A8">Ministry of [Name] · Citizen services</span><h1 style="margin: 0; font-size: 22px; font-weight: 600; letter-spacing: -.02em">Damage assessment visit</h1></div>
+    </div>
+    <div style="display: flex; gap: 6px; flex-wrap: wrap">
+      <span style="font: 500 12px 'Geist Mono', monospace; padding: 5px 9px; border-radius: 8px; background: #161922; color: #C3C8D4">60 MIN</span>
+      <span style="font: 500 12px 'Geist Mono', monospace; padding: 5px 9px; border-radius: 8px; background: #161922; color: #C3C8D4">AT YOUR ADDRESS</span>
+      <span style="font: 500 12px 'Geist Mono', monospace; padding: 5px 9px; border-radius: 8px; background: #161922; color: #C3C8D4">EUROPE/BERLIN ▾</span>
+    </div>
+  </div>
+
+  <div style="padding: 0 16px; display: flex; flex-direction: column; gap: 10px">
+    <div style="display: flex; align-items: center"><span style="flex: 1; font-weight: 600">Pick a day</span><span style="font: 500 12px 'Geist Mono', monospace; color: #9198A8">NOV 2026</span></div>
+    <div style="display: flex; gap: 6px; overflow: hidden">
+      <sc-for list="{{days}}" as="d" hint-placeholder-count="6">
+        <button style="{{d.style}}"><span style="font: 500 12px 'Geist Mono', monospace; opacity: .75">{{d.dow}}</span><span style="font-size: 18px; font-weight: 600">{{d.n}}</span><span style="font-size: 12px; opacity: .75">{{d.free}}</span></button>
+      </sc-for>
+    </div>
+    <span style="font-weight: 600; padding-top: 8px">Thu 19 Nov</span>
+    <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px">
+      <sc-for list="{{slots}}" as="s" hint-placeholder-count="6"><button style="{{s.style}}">{{s.t}}</button></sc-for>
+    </div>
+  </div>
+
+  <div style="position: absolute; left: 0; right: 0; bottom: 0; padding: 10px 16px 22px; border-radius: 26px 26px 0 0; background: #13151C; border-top: 1px solid #2A2E3A; box-shadow: 0 -20px 50px rgba(0,0,0,.5); display: flex; flex-direction: column; gap: 12px">
+    <span style="align-self: center; width: 40px; height: 4px; border-radius: 2px; background: #333846"></span>
+    <div style="display: flex; align-items: baseline"><span style="flex: 1; font-weight: 600; font-size: 17px">Thu 19 Nov · 10:00–11:00</span><span style="font: 500 12px 'Geist Mono', monospace; color: #F5B57A">NEEDS APPROVAL</span></div>
+    <label for="n" style="font-size: 12px; color: #9198A8">Name</label>
+    <input id="n" value="Maria Peters" style="height: 44px; margin-top: -6px; padding: 0 12px; border-radius: 12px; border: 1px solid #333846; background: #0A0B10; color: #ECEEF3; font: inherit">
+    <label for="e" style="font-size: 12px; color: #9198A8">Email</label>
+    <input id="e" value="maria.peters@mail.example" style="height: 44px; margin-top: -6px; padding: 0 12px; border-radius: 12px; border: 1px solid #333846; background: #0A0B10; color: #ECEEF3; font: inherit">
+    <label for="m" style="font-size: 12px; color: #9198A8">What was damaged?</label>
+    <input id="m" value="Car and garage" style="height: 44px; margin-top: -6px; padding: 0 12px; border-radius: 12px; border: 1px solid #333846; background: #0A0B10; color: #ECEEF3; font: inherit">
+    <button style="height: 52px; border-radius: 16px; border: 0; background: {{accent}}; color: #0A0B10; font: 600 16px Geist, sans-serif">Request this time</button>
+    <span style="font-size: 12px; color: #9198A8; text-align: center">The slot is held for 24 h while it’s approved.</span>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#8EA2FF","options":["#8EA2FF","#4FD1C5","#C6F06B","#F5A35C"]},"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const accent = this.props.accent ?? '#8EA2FF';
+    const days = [['WE', 18, '1 free'], ['TH', 19, '3 free'], ['FR', 20, '2 free'], ['MO', 23, '4 free'], ['TU', 24, '1 free'], ['WE', 25, 'full']].map(([dow, n, free]) => {
+      const sel = n === 19, full = free === 'full';
+      return { dow, n: String(n), free, style: 'flex: 0 0 56px; height: 76px; border-radius: 16px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; font-family: Geist, sans-serif; ' +
+        (sel ? 'border: 0; background: ' + accent + '; color: #0A0B10' : full ? 'border: 1px solid #1E2129; background: transparent; color: #8A91A1' : 'border: 1px solid #262A35; background: #13151C; color: #ECEEF3') };
+    });
+    const slots = ['10:00', '14:00', '16:00'].map((t) => ({ t, style: 'height: 48px; border-radius: 14px; font: 500 15px Geist Mono, monospace; ' +
+      (t === '10:00' ? 'border: 0; background: ' + accent + '; color: #0A0B10' : 'border: 1px solid #333846; background: transparent; color: #ECEEF3') }));
+    return { accent, days, slots };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Appointments</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>/*type2*/
+body{margin:0;background:#0A0B10;color:#ECEEF3;font-family:Geist,system-ui,sans-serif}
+a{color:#A9B6FF}a:hover{color:#C9D1FF}
+</style>
+</helmet>
+<div style="display: flex; flex-wrap: wrap; min-height: 900px; background: #07080C">
+<nav aria-label="Apps" style="flex: 0 0 68px; display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 12px 0; background: #07080C; border-right: 1px solid #1E2129; box-sizing: border-box">
+<a href="Main.dc.html" aria-label="Ortus home" style="width: 34px; height: 34px; margin-bottom: 10px; border-radius: 10px; background: {{accent}}; color: #0A0B10; display: flex; align-items: center; justify-content: center; font-weight: 700; text-decoration: none"><svg width="20" height="20" viewBox="0 0 48 48" aria-hidden="true"><g fill="currentColor"><path d="M22 30 L4 30 A18 18 0 0 1 22 12 Z"/><path d="M26 30 L26 12 A18 18 0 0 1 44 30 Z"/><rect x="4" y="34" width="40" height="5" rx="2.5"/></g></svg></a>
+<a href="Main.dc.html" aria-label="Mail" style="position: relative; width: 52px; display: flex; flex-direction: column; align-items: center; gap: 3px; padding: 7px 0; border-radius: 12px; text-decoration: none; font-size: 11px; color: #9198A8"><span aria-hidden="true" style="width: 30px; height: 30px; flex: none; border-radius: 9px; background: linear-gradient(155deg, #1B2350, #0B0D14); box-shadow: inset 0 1px 0 rgba(255,255,255,.08); display: flex; align-items: center; justify-content: center"><svg width="17" height="17" viewBox="0 0 48 48"><rect x="5" y="11" width="38" height="27" rx="6" fill="#8EA2FF"/><path d="M9 16 L24 27 L39 16" fill="none" stroke="#ECEEF3" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Mail</a>
+<a href="WebChat.dc.html" aria-label="Chat" style="position: relative; width: 52px; display: flex; flex-direction: column; align-items: center; gap: 3px; padding: 7px 0; border-radius: 12px; text-decoration: none; font-size: 11px; color: #9198A8"><span aria-hidden="true" style="width: 30px; height: 30px; flex: none; border-radius: 9px; background: linear-gradient(155deg, #1B2350, #0B0D14); box-shadow: inset 0 1px 0 rgba(255,255,255,.08); display: flex; align-items: center; justify-content: center"><svg width="17" height="17" viewBox="0 0 48 48"><circle cx="25" cy="22" r="16" fill="#8EA2FF"/><path d="M12 31 L7 42 L20 36 Z" fill="#8EA2FF"/><circle cx="18" cy="22" r="2.4" fill="#ECEEF3"/><circle cx="25" cy="22" r="2.4" fill="#ECEEF3"/><circle cx="32" cy="22" r="2.4" fill="#ECEEF3"/></svg></span>Chat<span style="position: absolute; right: 8px; top: 5px; width: 7px; height: 7px; border-radius: 50%; background: {{accent}}"></span></a>
+<a href="WebCalendar.dc.html" aria-label="Calendar" aria-current="page" style="position: relative; width: 52px; display: flex; flex-direction: column; align-items: center; gap: 3px; padding: 7px 0; border-radius: 12px; text-decoration: none; font-size: 11px; background: #1E2230; color: {{accent}}; font-weight: 600"><span aria-hidden="true" style="width: 30px; height: 30px; flex: none; border-radius: 9px; background: linear-gradient(155deg, #0E2F2E, #0B0D14); box-shadow: inset 0 1px 0 rgba(255,255,255,.08); display: flex; align-items: center; justify-content: center"><svg width="17" height="17" viewBox="0 0 48 48"><rect x="6" y="8" width="36" height="34" rx="7" fill="#4FD1C5"/><path d="M6 15 A7 7 0 0 1 13 8 H35 A7 7 0 0 1 42 15 V18 H6 Z" fill="#ECEEF3"/><rect x="27" y="27" width="8" height="8" rx="2" fill="#0B0D14"/></svg></span>Calendar</a>
+<a href="WebDrive.dc.html" aria-label="Drive" style="position: relative; width: 52px; display: flex; flex-direction: column; align-items: center; gap: 3px; padding: 7px 0; border-radius: 12px; text-decoration: none; font-size: 11px; color: #9198A8"><span aria-hidden="true" style="width: 30px; height: 30px; flex: none; border-radius: 9px; background: linear-gradient(155deg, #3A2412, #0B0D14); box-shadow: inset 0 1px 0 rgba(255,255,255,.08); display: flex; align-items: center; justify-content: center"><svg width="17" height="17" viewBox="0 0 48 48"><path d="M24 7 L43 17 L24 27 L5 17 Z" fill="#ECEEF3"/><path d="M5 25 L24 35 L43 25" fill="none" stroke="#F5A35C" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 32 L24 42 L43 32" fill="none" stroke="#F5A35C" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" opacity=".55"/></svg></span>Drive</a>
+<a href="WebDocEditor.dc.html" aria-label="Docs" style="position: relative; width: 52px; display: flex; flex-direction: column; align-items: center; gap: 3px; padding: 7px 0; border-radius: 12px; text-decoration: none; font-size: 11px; color: #9198A8"><span aria-hidden="true" style="width: 30px; height: 30px; flex: none; border-radius: 9px; background: linear-gradient(155deg, #3A2412, #0B0D14); box-shadow: inset 0 1px 0 rgba(255,255,255,.08); display: flex; align-items: center; justify-content: center"><svg width="17" height="17" viewBox="0 0 48 48"><path d="M10 9 A4 4 0 0 1 14 5 H28 L38 15 V39 A4 4 0 0 1 34 43 H14 A4 4 0 0 1 10 39 Z" fill="#F5A35C"/><path d="M28 5 V15 H38 Z" fill="#ECEEF3" opacity=".7"/><rect x="16" y="22" width="16" height="3.5" rx="1.75" fill="#ECEEF3"/><rect x="16" y="29" width="16" height="3.5" rx="1.75" fill="#ECEEF3"/><rect x="16" y="36" width="9" height="3.5" rx="1.75" fill="#ECEEF3"/></svg></span>Docs</a>
+<a href="WebTasks.dc.html" aria-label="Tasks" style="position: relative; width: 52px; display: flex; flex-direction: column; align-items: center; gap: 3px; padding: 7px 0; border-radius: 12px; text-decoration: none; font-size: 11px; color: #9198A8"><span aria-hidden="true" style="width: 30px; height: 30px; flex: none; border-radius: 9px; background: linear-gradient(155deg, #0E2F2E, #0B0D14); box-shadow: inset 0 1px 0 rgba(255,255,255,.08); display: flex; align-items: center; justify-content: center"><svg width="17" height="17" viewBox="0 0 48 48"><path d="M6 24 A18 18 0 0 1 24 6 H42 V24 A18 18 0 0 1 24 42 H6 Z" fill="#4FD1C5"/><path d="M15 24 L21.5 30.5 L33 19" fill="none" stroke="#ECEEF3" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Tasks</a>
+<a href="AppSwitcher.dc.html" aria-label="All apps" style="width: 52px; display: flex; flex-direction: column; align-items: center; gap: 3px; padding: 7px 0; border-radius: 12px; text-decoration: none; font-size: 11px; color: #9198A8"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><rect x="14" y="14" width="6" height="6" rx="1"/></svg>All apps</a>
+<span style="flex: 1"></span>
+<a href="WebNotifications.dc.html" aria-label="Notifications, 9 unread" style="position: relative; width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; text-decoration: none; color: #9198A8"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9M10 21h4"/></svg><span style="position: absolute; right: 6px; top: 6px; width: 8px; height: 8px; border-radius: 50%; background: #FF7A6E"></span></a>
+<a href="WebPersonal.dc.html" aria-label="My settings" style="width: 36px; height: 36px; margin-top: 6px; border-radius: 12px; background: #DDE3F8; color: #0A0B10; font-size: 13px; font-weight: 700; display: flex; align-items: center; justify-content: center; text-decoration: none; ">SK</a>
+</nav>
+<div style="flex: 999 1 560px; min-width: 0">
+<div style="display: flex; flex-direction: column; min-height: 900px; background: #0A0B10; color: #ECEEF3; font-family: Geist, system-ui, sans-serif; font-size: 15px">
+
+  <header style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-bottom: 1px solid #1E2129; flex-wrap: wrap">
+        <div role="tablist" style="display: flex; gap: 2px; padding: 3px; border-radius: 10px; background: #13151C; border: 1px solid #262A35"><a href="WebCalendar.dc.html" role="tab" aria-selected="false" style="height: 28px; padding: 0 12px; border-radius: 7px; display: flex; align-items: center; text-decoration: none; color: #9198A8; font-weight: 500">Calendar</a><a href="WebAppointments.dc.html" role="tab" aria-selected="true" style="height: 28px; padding: 0 12px; border-radius: 7px; display: flex; align-items: center; text-decoration: none; background: #1E2230; color: #ECEEF3; font-weight: 600">Appointments</a><a href="WebRooms.dc.html" role="tab" aria-selected="false" style="height: 28px; padding: 0 12px; border-radius: 7px; display: flex; align-items: center; text-decoration: none; color: #9198A8; font-weight: 500">Rooms</a></div>
+  </header>
+
+  <div style="flex: 1; width: 100%; max-width: 1240px; margin: 0 auto; padding: 28px 16px; box-sizing: border-box; display: flex; flex-direction: column; gap: 24px">
+    <div style="display: flex; align-items: flex-end; gap: 16px; flex-wrap: wrap">
+      <div style="flex: 1; min-width: 260px; display: flex; flex-direction: column; gap: 6px">
+        <h1 style="margin: 0; font-size: 28px; font-weight: 600; letter-spacing: -.02em">Appointments</h1>
+        <span style="color: #9198A8">Residents book a time from a public link. Slots come from the team’s calendars; confirmations go out from the ministry’s own mail domain.</span>
+      </div>
+      <div style="display: flex; align-items: center; gap: 8px; height: 44px; padding: 0 6px 0 14px; border-radius: 12px; background: #13151C; border: 1px solid #262A35">
+        <span style="font: 500 14px 'Geist Mono', monospace; color: {{accent}}">cal.ministry.example/citizen-services</span>
+        <button style="height: 32px; padding: 0 12px; border-radius: 9px; border: 0; background: #1E2230; color: #ECEEF3; font: 500 14px Geist, sans-serif">Copy</button>
+      </div>
+      <button style="height: 44px; padding: 0 18px; border-radius: 12px; border: 0; background: {{accent}}; color: #0A0B10; font: 600 15px Geist, sans-serif">New type</button>
+    </div>
+
+    <section aria-labelledby="types-h" style="display: flex; flex-direction: column; gap: 12px">
+      <h2 id="types-h" style="margin: 0; font: 500 12px 'Geist Mono', monospace; color: #9198A8; letter-spacing: .06em">APPOINTMENT TYPES</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px">
+        <sc-for list="{{types}}" as="t" hint-placeholder-count="3">
+          <div style="padding: 18px; border-radius: 18px; background: #11131A; border: 1px solid #1E2129; display: flex; flex-direction: column; gap: 12px">
+            <div style="display: flex; align-items: center; gap: 10px">
+              <span style="width: 10px; height: 10px; border-radius: 50%; background: {{t.color}}"></span>
+              <span style="flex: 1; font-weight: 600; font-size: 16px">{{t.name}}</span>
+              <span style="{{t.stateStyle}}">{{t.state}}</span>
+            </div>
+            <span style="color: #9198A8; font-size: 14px; line-height: 1.5">{{t.desc}}</span>
+            <div style="display: flex; gap: 6px; flex-wrap: wrap">
+              <sc-for list="{{t.meta}}" as="m" hint-placeholder-count="3">
+                <span style="font: 500 12px 'Geist Mono', monospace; padding: 4px 8px; border-radius: 7px; background: #1A1D27; color: #C3C8D4">{{m}}</span>
+              </sc-for>
+            </div>
+            <div style="display: flex; gap: 8px; border-top: 1px solid #1E2129; padding-top: 12px">
+              <a href="WebBooking.dc.html" style="font: 500 13px 'Geist Mono', monospace; color: {{accent}}; text-decoration: none; flex: 1">/{{t.slug}}</a>
+              <span style="font-size: 13px; color: #9198A8">{{t.count}}</span>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+    </section>
+
+    <div style="display: flex; gap: 16px; flex-wrap: wrap">
+      <section aria-labelledby="hours-h" style="flex: 1 1 420px; min-width: 0; padding: 18px; border-radius: 18px; background: #11131A; border: 1px solid #1E2129; display: flex; flex-direction: column; gap: 12px">
+        <div style="display: flex; align-items: center"><h2 id="hours-h" style="margin: 0; flex: 1; font-size: 16px; font-weight: 600">Bookable hours</h2><span style="font-size: 13px; color: #9198A8">Europe/Warsaw · buffers 10 min · max 4/day</span></div>
+        <sc-for list="{{hours}}" as="h" hint-placeholder-count="7">
+          <div style="display: flex; align-items: center; gap: 12px; min-height: 32px">
+            <span style="width: 40px; font: 500 13px 'Geist Mono', monospace; color: #9198A8">{{h.d}}</span>
+            <div style="flex: 1; position: relative; height: 20px; border-radius: 6px; background: #161922">
+              <sc-for list="{{h.blocks}}" as="b" hint-placeholder-count="1"><span style="{{b}}"></span></sc-for>
+            </div>
+            <span style="width: 110px; text-align: right; font: 500 12px 'Geist Mono', monospace; color: #C3C8D4">{{h.label}}</span>
+          </div>
+        </sc-for>
+        <div style="display: flex; justify-content: space-between; padding-left: 52px; padding-right: 122px; font: 500 12px 'Geist Mono', monospace; color: #8A91A1"><span>08</span><span>12</span><span>16</span><span>20</span></div>
+      </section>
+
+      <section aria-labelledby="up-h" style="flex: 1 1 360px; min-width: 0; padding: 18px; border-radius: 18px; background: #11131A; border: 1px solid #1E2129; display: flex; flex-direction: column; gap: 6px">
+        <h2 id="up-h" style="margin: 0 0 6px; font-size: 16px; font-weight: 600">Upcoming bookings</h2>
+        <sc-for list="{{bookings}}" as="b" hint-placeholder-count="4">
+          <div style="display: flex; align-items: center; gap: 12px; padding: 10px; border-radius: 12px; background: #161922">
+            <span style="width: 44px; display: flex; flex-direction: column; align-items: center; font-size: 12px; color: #9198A8">{{b.dow}}<strong style="font-size: 16px; color: #ECEEF3">{{b.day}}</strong></span>
+            <span style="flex: 1; display: flex; flex-direction: column; gap: 2px"><span style="font-weight: 500">{{b.who}}</span><span style="font-size: 13px; color: #9198A8">{{b.what}}</span></span>
+            <span style="font: 500 13px 'Geist Mono', monospace; color: #C3C8D4">{{b.time}}</span>
+          </div>
+        </sc-for>
+      </section>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#8EA2FF","options":["#8EA2FF","#4FD1C5","#C6F06B","#F5A35C"]},"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const accent = this.props.accent ?? '#8EA2FF';
+    const on = 'font: 500 12px Geist Mono, monospace; padding: 3px 8px; border-radius: 7px; background: rgba(79,209,197,.15); color: #6FE0D5';
+    const off = 'font: 500 12px Geist Mono, monospace; padding: 3px 8px; border-radius: 7px; background: #1A1D27; color: #9198A8';
+    const types = [
+      { name: 'Damage claim advice', slug: 'advice', color: accent, desc: 'Fifteen minutes with an adviser about a flood damage claim.', meta: ['15 min', 'video or phone', 'no approval'], state: 'LIVE', count: '6 booked this month' },
+      { name: 'Damage assessment visit', slug: 'assessment', color: '#4FD1C5', desc: 'An assessor visits the property. Asks for the address and what was damaged.', meta: ['60 min', '3 questions', 'approve first'], state: 'LIVE', count: '2 pending approval' },
+      { name: 'Office hours', slug: 'office-hours', color: '#F5A35C', desc: 'Group slot, up to 8 people. Fridays only.', meta: ['45 min', 'group · 8', 'Fri'], state: 'PAUSED', count: 'resumes Dec 4' }
+    ].map((t) => ({ ...t, stateStyle: t.state === 'LIVE' ? on : off }));
+    const span = (a, b) => 'position: absolute; top: 3px; bottom: 3px; border-radius: 4px; background: ' + accent + '; opacity: .85; left: ' + ((a - 8) / 12 * 100) + '%; width: ' + ((b - a) / 12 * 100) + '%';
+    const hours = [
+      { d: 'Mon', blocks: [span(10, 12), span(14, 17)], label: '10–12, 14–17' },
+      { d: 'Tue', blocks: [span(10, 12), span(14, 17)], label: '10–12, 14–17' },
+      { d: 'Wed', blocks: [span(11, 13)], label: '11–13' },
+      { d: 'Thu', blocks: [span(10, 12), span(14, 18)], label: '10–12, 14–18' },
+      { d: 'Fri', blocks: [span(12, 15)], label: '12–15' },
+      { d: 'Sat', blocks: [], label: 'off' },
+      { d: 'Sun', blocks: [], label: 'off' }
+    ];
+    const bookings = [
+      { dow: 'WED', day: '18', who: 'Park Street school · 2 guests', what: 'Damage claim advice', time: '11:30' },
+      { dow: 'THU', day: '19', who: 'Maria Peters · District 4', what: 'Assessment visit · needs approval', time: '10:00' },
+      { dow: 'MON', day: '23', who: 'R. Novak · District 2', what: 'Damage claim advice', time: '14:00' },
+      { dow: 'TUE', day: '24', who: 'Request from L. Ortiz', what: 'Assessment visit · needs approval', time: '15:00' }
+    ];
+    return { accent, types, hours, bookings };
+  }
+}
+</script>
+</body>
+</html>

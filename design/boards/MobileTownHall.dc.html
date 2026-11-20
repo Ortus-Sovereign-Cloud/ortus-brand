@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Mobile town hall guest</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
+<style>/*type2*//*dense2*/
+body{margin:0;background:#0A0B10;color:#ECEEF3;font-family:Geist,system-ui,sans-serif}
+a{color:#A9B6FF}a:hover{color:#C9D1FF}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; position: relative; overflow: hidden; background: #0A0B10; color: #ECEEF3; font-family: Geist, system-ui, sans-serif; font-size: 16px; display: flex; flex-direction: column">
+  <div style="position: relative; height: 260px; flex: none; background: radial-gradient(300px 200px at 50% 45%, #232838 0%, #0D0F15 75%); display: flex; align-items: center; justify-content: center">
+    <span style="width: 88px; height: 88px; border-radius: 28px; background: #DDE3F8; color: #0A0B10; display: flex; align-items: center; justify-content: center; font-size: 26px; font-weight: 700; box-shadow: 0 0 0 3px {{accent}}">KL</span>
+    <span style="position: absolute; left: 16px; top: 16px; display: flex; align-items: center; gap: 8px; height: 30px; padding: 0 12px; border-radius: 10px; background: rgba(7,8,12,.7); font-size: 13px; font-weight: 600"><span style="width: 8px; height: 8px; border-radius: 50%; background: #FF7A6E"></span>Live · 412 watching</span>
+    <span style="position: absolute; left: 16px; right: 16px; bottom: 14px; padding: 10px 14px; border-radius: 12px; background: rgba(7,8,12,.78); font-size: 15px; line-height: 1.4">Katarzyna Lis: “…the roads team repairs Mill Lane on Thursday.”</span>
+  </div>
+  <div style="padding: 16px 16px 4px; display: flex; flex-direction: column; gap: 4px"><h1 style="margin: 0; font-size: 20px; font-weight: 600; letter-spacing: -.01em">Town hall: flood response</h1><span style="font-size: 14px; color: #9198A8">You joined as a guest · captions on · you are muted</span></div>
+  <div style="flex: 1; overflow: hidden; padding: 0 8px; display: flex; flex-direction: column">
+    <span style="font-size: 13px; font-weight: 500; color: #9198A8; padding: 16px 12px 4px">Questions</span>
+    <div style="display: flex; align-items: center; gap: 12px; min-height: 68px; padding: 0 12px; border-radius: 16px; background: #161922; box-shadow: inset 0 0 0 1px #333846"><span style="width: 48px; height: 44px; flex: none; border-radius: 12px; background: #1E2230; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 13px; font-weight: 600; line-height: 1.2"><span style="color: #9198A8">▲</span>128</span><span style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px"><span style="font-weight: 500">When will Mill Lane be repaired?</span><span style="font-size: 14px; color: #6FE0D5">Your question · answered live</span></span></div>
+    <div style="display: flex; align-items: center; gap: 12px; min-height: 68px; padding: 0 12px; border-radius: 16px; "><span style="width: 48px; height: 44px; flex: none; border-radius: 12px; background: #1E2230; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 13px; font-weight: 600; line-height: 1.2"><span style="color: #9198A8">▲</span>96</span><span style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px"><span style="font-weight: 500">Will there be compensation for damaged cars?</span><span style="font-size: 14px; color: #9198A8">District 2</span></span></div>
+    <div style="display: flex; align-items: center; gap: 12px; min-height: 68px; padding: 0 12px; border-radius: 16px; "><span style="width: 48px; height: 44px; flex: none; border-radius: 12px; background: #1E2230; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 13px; font-weight: 600; line-height: 1.2"><span style="color: #9198A8">▲</span>41</span><span style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px"><span style="font-weight: 500">How can volunteers sign up?</span><span style="font-size: 14px; color: #9198A8">Guest</span></span></div>
+  </div>
+  <div style="padding: 12px 16px 28px; border-top: 1px solid #1E2129; display: flex; align-items: center; gap: 8px">
+    <label for="tq" style="position: absolute; left: -9999px">Ask a question</label>
+    <input id="tq" placeholder="Ask a question" style="flex: 1; min-width: 0; height: 48px; padding: 0 16px; border-radius: 14px; border: 1px solid #333846; background: #13151C; color: #ECEEF3; font: 15px Geist, sans-serif; box-sizing: border-box">
+    <a href="#" style="height: 48px; padding: 0 18px; border-radius: 14px; background: {{accent}}; color: #0A0B10; display: flex; align-items: center; font-weight: 600; text-decoration: none">Ask</a>
+  </div></div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#8EA2FF","options":["#8EA2FF","#4FD1C5","#C6F06B","#F5A35C"]},"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() { return { accent: this.props.accent ?? '#8EA2FF' }; }
+}
+</script>
+</body>
+</html>

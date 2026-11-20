@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Book an intro call</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>/*type2*/
+body{margin:0;background:#0A0B10;color:#ECEEF3;font-family:Geist,system-ui,sans-serif}
+a{color:#A9B6FF}a:hover{color:#C9D1FF}
+</style>
+</helmet>
+<div style="min-height: 900px; background: #0A0B10; color: #ECEEF3; font-family: Geist, system-ui, sans-serif; font-size: 15px; padding: 64px 16px; box-sizing: border-box; display: flex; flex-direction: column; align-items: center; gap: 20px">
+  <div style="width: 100%; max-width: 1040px; border-radius: 26px; background: #11131A; border: 1px solid #1E2129; display: flex; flex-wrap: wrap; overflow: hidden">
+
+    <section style="flex: 1 1 280px; padding: 28px; border-right: 1px solid #1E2129; display: flex; flex-direction: column; gap: 16px; box-sizing: border-box">
+      <div style="width: 56px; height: 56px; border-radius: 18px; background: #DDE3F8; color: #0A0B10; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 18px">M</div>
+      <div style="display: flex; flex-direction: column; gap: 4px">
+        <span style="color: #9198A8">Ministry of [Name] · Citizen services</span>
+        <h1 style="margin: 0; font-size: 26px; font-weight: 600; letter-spacing: -.02em">Damage claim advice</h1>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 10px; color: #C3C8D4">
+        <span style="display: flex; gap: 10px; align-items: center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>15 minutes</span>
+        <span style="display: flex; gap: 10px; align-items: center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="6" width="14" height="12" rx="2"/><path d="m16 10 6-3v10l-6-3"/></svg>Video link sent on confirm</span>
+        <span style="display: flex; gap: 10px; align-items: center"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>Your time zone: Europe/Berlin</span>
+      </div>
+      <p style="margin: 0; color: #9198A8; line-height: 1.6">Talk to an adviser about a flood damage claim. Have your address and photos ready.</p>
+    </section>
+
+    <section aria-labelledby="pick-h" style="flex: 1 1 340px; padding: 28px; display: flex; flex-direction: column; gap: 16px; box-sizing: border-box">
+      <div style="display: flex; align-items: center; gap: 8px">
+        <h2 id="pick-h" style="margin: 0; flex: 1; font-size: 16px; font-weight: 600">November 2026</h2>
+        <button aria-label="Previous month" style="width: 36px; height: 36px; border-radius: 10px; border: 1px solid #262A35; background: transparent; color: #ECEEF3">‹</button>
+        <button aria-label="Next month" style="width: 36px; height: 36px; border-radius: 10px; border: 1px solid #262A35; background: transparent; color: #ECEEF3">›</button>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 4px; text-align: center">
+        <sc-for list="{{dow}}" as="d" hint-placeholder-count="7"><span style="font: 500 12px 'Geist Mono', monospace; color: #8A91A1; padding-bottom: 6px">{{d}}</span></sc-for>
+        <sc-for list="{{days}}" as="d" hint-placeholder-count="35">
+          <span style="{{d.style}}">{{d.n}}</span>
+        </sc-for>
+      </div>
+    </section>
+
+    <section aria-labelledby="slot-h" style="flex: 1 1 240px; padding: 28px; border-left: 1px solid #1E2129; display: flex; flex-direction: column; gap: 10px; box-sizing: border-box">
+      <h2 id="slot-h" style="margin: 0 0 6px; font-size: 16px; font-weight: 600">Thu 19 Nov</h2>
+      <sc-for list="{{slots}}" as="s" hint-placeholder-count="5">
+        <button style="{{s.style}}">{{s.t}}</button>
+      </sc-for>
+      <div style="margin-top: 8px; padding-top: 14px; border-top: 1px solid #1E2129; display: flex; flex-direction: column; gap: 10px">
+        <label for="em" style="font-size: 13px; color: #9198A8">Your email</label>
+        <input id="em" value="maria.peters@mail.example" style="height: 42px; padding: 0 12px; border-radius: 10px; border: 1px solid #333846; background: #161922; color: #ECEEF3; font: inherit">
+        <button style="height: 46px; border-radius: 12px; border: 0; background: {{accent}}; color: #0A0B10; font: 600 15px Geist, sans-serif">Confirm 14:00</button>
+        <span style="font-size: 13px; color: #9198A8; line-height: 1.5">You’ll get an invite with a calendar file. Reschedule or cancel from that email.</span>
+      </div>
+    </section>
+  </div>
+  <span style="font: 500 12px 'Geist Mono', monospace; color: #8A91A1">Powered by Ortus · no account needed</span>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#8EA2FF","options":["#8EA2FF","#4FD1C5","#C6F06B","#F5A35C"]},"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const accent = this.props.accent ?? '#8EA2FF';
+    const days = [];
+    for (let i = 0; i < 6; i++) days.push({ n: '', style: '' });
+    const avail = [18, 19, 20, 23, 24, 25, 26, 27, 30];
+    for (let n = 1; n <= 30; n++) {
+      const sel = n === 19, ok = avail.includes(n);
+      days.push({ n: String(n), style: 'height: 44px; display: flex; align-items: center; justify-content: center; border-radius: 12px; font-weight: ' + (ok ? '600' : '400') + '; ' +
+        (sel ? 'background: ' + accent + '; color: #0A0B10' : ok ? 'background: rgba(142,162,255,.12); color: #C9D1FF' : 'color: #8A91A1') });
+    }
+    const slots = ['10:00', '10:30', '11:30', '14:00', '14:30', '16:00'].map((t) => ({
+      t, style: 'height: 44px; border-radius: 12px; font: 500 15px Geist Mono, monospace; ' +
+        (t === '14:00' ? 'border: 0; background: ' + accent + '; color: #0A0B10' : 'border: 1px solid #333846; background: transparent; color: #ECEEF3')
+    }));
+    return { accent, days, slots, dow: ['MO', 'TU', 'WE', 'TH', 'FR', 'SA', 'SU'] };
+  }
+}
+</script>
+</body>
+</html>

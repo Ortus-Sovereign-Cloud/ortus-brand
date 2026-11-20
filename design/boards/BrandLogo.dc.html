@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Ortus logo system</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Geist:wght@400;500;600&family=Geist+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+</style>
+</helmet>
+<div style="width: 1440px; height: 900px; box-sizing: border-box; padding: 48px 56px; background: #07080C; color: #ECEEF3; font-family: Geist, system-ui, sans-serif; display: grid; grid-template-columns: 1.5fr 1fr 1fr; grid-template-rows: 1.3fr 1fr; gap: 14px">
+
+  <div style="grid-column: 1 / 2; grid-row: 1 / 2; border-radius: 28px; background: radial-gradient(600px 400px at 30% 30%, #18204A 0%, #0B0D14 70%); border: 1px solid #1E2129; display: flex; flex-direction: column; justify-content: center; padding: 48px; gap: 22px; position: relative; overflow: hidden">
+    <span style="position: absolute; left: 28px; top: 24px; font: 500 11px 'Geist Mono', monospace; color: #9198A8; letter-spacing: .08em">PRIMARY LOCKUP</span>
+    <div style="display: flex; align-items: center; gap: 26px">
+      <svg style="flex: none" width="104" height="104" viewBox="0 0 48 48" role="img" aria-label="Ortus mark"><path d="M22 30 L4 30 A18 18 0 0 1 22 12 Z" fill="{{accent}}"/><path d="M26 30 L26 12 A18 18 0 0 1 44 30 Z" fill="#6E86FF"/><rect x="4" y="34" width="40" height="5" rx="2.5" fill="#4FD1C5"/></svg>
+      <span style="font: 700 92px Unbounded, sans-serif; letter-spacing: -.045em; line-height: 1">Ortus</span>
+    </div>
+    <span style="font-size: 16px; color: #9198A8; max-width: 560px; line-height: 1.5">A sun rising over its own ground. Ortus is Latin for “rising, origin”; the teal ground is <em>yours</em>: the organisation that owns its data.</span>
+  </div>
+
+  <div style="border-radius: 28px; background: #F4F5F7; color: #0A0B10; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px; position: relative">
+    <span style="position: absolute; left: 24px; top: 22px; font: 500 11px 'Geist Mono', monospace; color: #6B7080; letter-spacing: .08em">ON LIGHT · PRINT</span>
+    <div style="display: flex; align-items: center; gap: 14px">
+      <svg style="flex: none" width="64" height="64" viewBox="0 0 48 48" aria-hidden="true"><path d="M22 30 L4 30 A18 18 0 0 1 22 12 Z" fill="#2A40C9"/><path d="M26 30 L26 12 A18 18 0 0 1 44 30 Z" fill="#1E2E9A"/><rect x="4" y="34" width="40" height="5" rx="2.5" fill="#0F8C80"/></svg>
+      <span style="font: 700 52px Unbounded, sans-serif; letter-spacing: -.04em">Ortus</span>
+    </div>
+    <div style="display: flex; align-items: center; gap: 14px">
+      <svg style="flex: none" width="40" height="40" viewBox="0 0 48 48" aria-hidden="true"><g fill="#0A0B10"><path d="M22 30 L4 30 A18 18 0 0 1 22 12 Z"/><path d="M26 30 L26 12 A18 18 0 0 1 44 30 Z"/><rect x="4" y="34" width="40" height="5" rx="2.5"/></g></svg>
+      <span style="font: 700 32px Unbounded, sans-serif; letter-spacing: -.04em">Ортус</span>
+    </div>
+    <span style="font-size: 12px; color: #6B7080">Full colour · one colour · Cyrillic</span>
+  </div>
+
+  <div style="border-radius: 28px; background: #11131A; border: 1px solid #1E2129; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; position: relative">
+    <span style="position: absolute; left: 24px; top: 22px; font: 500 11px 'Geist Mono', monospace; color: #9198A8; letter-spacing: .08em">CONSTRUCTION</span>
+    <svg style="flex: none" width="210" height="210" viewBox="0 0 48 48" role="img" aria-label="Mark construction grid">
+      <rect x="0" y="0" width="48" height="48" fill="none" stroke="#262A35" stroke-width=".2"/>
+      <circle cx="24" cy="30" r="20" fill="none" stroke="#333846" stroke-width=".2" stroke-dasharray=".8 .8"/>
+      <path d="M24 0V48M0 24H48" stroke="#333846" stroke-width=".2"/>
+      <g fill="none" stroke="{{accent}}" stroke-width=".5"><path d="M22 30 L4 30 A18 18 0 0 1 22 12 Z"/><path d="M26 30 L26 12 A18 18 0 0 1 44 30 Z"/><rect x="4" y="34" width="40" height="5" rx="2.5"/></g>
+    </svg>
+    <span style="font: 500 11px 'Geist Mono', monospace; color: #9198A8">2 QUARTER DISCS + GROUND · GAP = 1/12 OF WIDTH</span>
+  </div>
+
+  <div style="border-radius: 28px; background: #11131A; border: 1px solid #1E2129; display: flex; flex-direction: column; justify-content: center; gap: 18px; padding: 28px; position: relative">
+    <span style="position: absolute; left: 24px; top: 22px; font: 500 11px 'Geist Mono', monospace; color: #9198A8; letter-spacing: .08em">APP ICON · FAVICON · SIZES</span>
+    <div style="display: flex; align-items: flex-end; gap: 18px; margin-top: 18px">
+      <span style="width: 120px; height: 120px; border-radius: 34px; background: linear-gradient(155deg, #1A2040, #0B0D14); box-shadow: inset 0 1px 0 rgba(255,255,255,.08), 0 20px 40px rgba(0,0,0,.4); display: flex; align-items: center; justify-content: center"><svg style="flex: none" width="70" height="70" viewBox="0 0 48 48" aria-hidden="true"><path d="M22 30 L4 30 A18 18 0 0 1 22 12 Z" fill="{{accent}}"/><path d="M26 30 L26 12 A18 18 0 0 1 44 30 Z" fill="#6E86FF"/><rect x="4" y="34" width="40" height="5" rx="2.5" fill="#4FD1C5"/></svg></span>
+      <span style="width: 60px; height: 60px; border-radius: 18px; background: #161922; display: flex; align-items: center; justify-content: center"><svg style="flex: none" width="34" height="34" viewBox="0 0 48 48" aria-hidden="true"><path d="M22 30 L4 30 A18 18 0 0 1 22 12 Z" fill="{{accent}}"/><path d="M26 30 L26 12 A18 18 0 0 1 44 30 Z" fill="#6E86FF"/><rect x="4" y="34" width="40" height="5" rx="2.5" fill="#4FD1C5"/></svg></span>
+      <svg style="flex: none" width="24" height="24" viewBox="0 0 48 48" aria-hidden="true"><path d="M22 30 L4 30 A18 18 0 0 1 22 12 Z" fill="{{accent}}"/><path d="M26 30 L26 12 A18 18 0 0 1 44 30 Z" fill="#6E86FF"/><rect x="4" y="34" width="40" height="5" rx="2.5" fill="#4FD1C5"/></svg>
+      <svg style="flex: none" width="16" height="16" viewBox="0 0 48 48" aria-hidden="true"><path d="M22 30 L4 30 A18 18 0 0 1 22 12 Z" fill="{{accent}}"/><path d="M26 30 L26 12 A18 18 0 0 1 44 30 Z" fill="#6E86FF"/><rect x="4" y="34" width="40" height="5" rx="2.5" fill="#4FD1C5"/></svg>
+    </div>
+    <span style="font-size: 12px; color: #9198A8">Same mark at every size; at 16 px keep the ground line at least 2 px tall.</span>
+  </div>
+
+  <div style="grid-column: 2 / 4; border-radius: 28px; background: #11131A; border: 1px solid #1E2129; padding: 28px; display: flex; flex-direction: column; gap: 16px; position: relative">
+    <span style="font: 500 11px 'Geist Mono', monospace; color: #9198A8; letter-spacing: .08em">PRODUCT NAMES · TENANT CO-BRAND</span>
+    <div style="display: flex; gap: 28px; flex-wrap: wrap; align-items: center">
+      <sc-for list="{{subs}}" as="s" hint-placeholder-count="4">
+        <span style="display: flex; align-items: baseline; gap: 8px"><span style="font: 700 26px Unbounded, sans-serif; letter-spacing: -.03em">Ortus</span><span style="font: 500 26px Geist, sans-serif; color: {{s.c}}">{{s.n}}</span></span>
+      </sc-for>
+    </div>
+    <div style="display: flex; align-items: center; gap: 14px; padding: 14px 16px; border-radius: 16px; background: #0A0B10; border: 1px solid #262A35">
+      <span style="width: 40px; height: 40px; border-radius: 10px; background: #F4F5F7; color: #0A0B10; font: 700 11px 'Geist Mono', monospace; display: flex; align-items: center; justify-content: center">[GOV]</span>
+      <span style="font-weight: 600; font-size: 16px">Ministry of [Name] Workspace</span>
+      <span style="flex: 1"></span>
+      <span style="display: flex; align-items: center; gap: 6px; font-size: 12px; color: #9198A8">runs on <svg style="flex: none" width="14" height="14" viewBox="0 0 48 48" aria-hidden="true"><g fill="#9198A8"><path d="M22 30 L4 30 A18 18 0 0 1 22 12 Z"/><path d="M26 30 L26 12 A18 18 0 0 1 44 30 Z"/><rect x="4" y="34" width="40" height="5" rx="2.5"/></g></svg> Ortus</span>
+    </div>
+    <span style="font-size: 12px; color: #9198A8">Wordmark: Unbounded Bold, tracking −4%. UI: Geist + Geist Mono. Tenants put their own crest first; “runs on Ortus” stays small.</span>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#8EA2FF","options":["#8EA2FF","#4FD1C5","#C6F06B","#F5A35C"]},"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const accent = this.props.accent ?? '#8EA2FF';
+    return { accent, subs: [{ n: 'Mail', c: accent }, { n: 'Chat', c: accent }, { n: 'Drive', c: '#F5B57A' }, { n: 'Records', c: '#F5B57A' }, { n: 'Cloud', c: '#6FE0D5' }] };
+  }
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Citizen form</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#0A0B10;color:#ECEEF3;font-family:Geist,system-ui,sans-serif}
+a{color:#A9B6FF}a:hover{color:#C9D1FF}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; position: relative; overflow: hidden; background: #0A0B10; color: #ECEEF3; font-family: Geist, system-ui, sans-serif; font-size: 16px; display: flex; flex-direction: column">
+  <header style="display: flex; align-items: center; gap: 10px; padding: 16px 20px 10px">
+    <span style="width: 36px; height: 36px; border-radius: 10px; background: #F4F5F7; color: #0A0B10; font: 700 10px 'Geist Mono', monospace; display: flex; align-items: center; justify-content: center">[GOV]</span>
+    <span style="flex: 1; font-weight: 600">Ministry of [Name]</span><button style="height: 36px; padding: 0 12px; border-radius: 10px; border: 1px solid #333846; background: transparent; color: #ECEEF3; font: 500 14px Geist, sans-serif">EN ▾</button>
+  </header>
+  <div style="padding: 0 20px; display: flex; gap: 6px"><span style="flex: 1; height: 4px; border-radius: 2px; background: #4FD1C5"></span><span style="flex: 1; height: 4px; border-radius: 2px; background: {{accent}}"></span><span style="flex: 1; height: 4px; border-radius: 2px; background: #1E2230"></span><span style="flex: 1; height: 4px; border-radius: 2px; background: #1E2230"></span></div>
+  <div style="flex: 1; padding: 18px 20px 0; display: flex; flex-direction: column; gap: 18px">
+    <div style="display: flex; flex-direction: column; gap: 4px"><span style="font: 500 12px 'Geist Mono', monospace; color: #A4ABBA">STEP 2 OF 4</span><h1 style="margin: 0; font-size: 26px; font-weight: 600; letter-spacing: -.02em">Report flood damage</h1></div>
+    <label style="display: flex; flex-direction: column; gap: 8px"><span style="font-weight: 600">Your address</span><input value="14 Mill Lane, District 4" style="height: 50px; padding: 0 14px; border-radius: 14px; border: 1px solid #333846; background: #11131A; color: #ECEEF3; font: 16px Geist, sans-serif"></label>
+    <div style="display: flex; flex-direction: column; gap: 8px"><span style="font-weight: 600">What was damaged?</span><div style="display: flex; gap: 8px; flex-wrap: wrap"><button style="height: 44px; padding: 0 16px; border-radius: 22px; font: 500 15px Geist, sans-serif; border: 1px solid #333846; background: transparent; color: #ECEEF3">Home</button><button style="height: 44px; padding: 0 16px; border-radius: 22px; font: 600 15px Geist, sans-serif; border: 0; background: {{accent}}; color: #0A0B10">Car</button><button style="height: 44px; padding: 0 16px; border-radius: 22px; font: 500 15px Geist, sans-serif; border: 1px solid #333846; background: transparent; color: #ECEEF3">Business</button><button style="height: 44px; padding: 0 16px; border-radius: 22px; font: 500 15px Geist, sans-serif; border: 1px solid #333846; background: transparent; color: #ECEEF3">Road</button><button style="height: 44px; padding: 0 16px; border-radius: 22px; font: 500 15px Geist, sans-serif; border: 1px solid #333846; background: transparent; color: #ECEEF3">Other</button></div></div>
+    <div style="display: flex; flex-direction: column; gap: 8px"><span style="font-weight: 600">Photos <span style="font-weight: 400; color: #A4ABBA">· up to 5</span></span>
+      <div style="display: flex; gap: 10px"><span style="width: 84px; height: 84px; border-radius: 14px; background: linear-gradient(135deg,#3A4257,#1A1D27)"></span><span style="width: 84px; height: 84px; border-radius: 14px; background: linear-gradient(135deg,#4A3B2E,#1A1D27)"></span><button aria-label="Add photo" style="width: 84px; height: 84px; border-radius: 14px; border: 1px dashed #333846; background: transparent; color: #C3C8D4; font-size: 26px">+</button></div>
+      <div role="alert" style="display: flex; gap: 10px; align-items: center; padding: 12px; border-radius: 14px; background: rgba(245,163,92,.1); border: 1px solid rgba(245,163,92,.35)"><span style="flex: 1; font-size: 14px; color: #F8C79A; line-height: 1.4">garage.heic is larger than 20 MB.</span><button style="height: 36px; padding: 0 12px; border-radius: 10px; border: 0; background: #F5A35C; color: #0A0B10; font: 600 14px Geist, sans-serif">Shrink and add</button></div>
+    </div>
+  </div>
+  <div style="padding: 14px 20px 26px; display: flex; flex-direction: column; gap: 10px"><div style="display: flex; gap: 10px"><button style="height: 52px; padding: 0 20px; border-radius: 16px; border: 1px solid #333846; background: transparent; color: #ECEEF3; font: 500 16px Geist, sans-serif">Back</button><button style="flex: 1; height: 52px; border-radius: 16px; border: 0; background: {{accent}}; color: #0A0B10; font: 600 16px Geist, sans-serif">Next</button></div><span style="font-size: 13px; color: #A4ABBA; text-align: center">No account needed · your answers are saved on this phone</span></div></div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#8EA2FF","options":["#8EA2FF","#4FD1C5","#C6F06B","#F5A35C"]},"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() { return { accent: this.props.accent ?? '#8EA2FF' }; }
+}
+</script>
+</body>
+</html>

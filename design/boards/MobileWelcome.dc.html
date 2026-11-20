@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Phone welcome and enrolment</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
+<style>/*dense2*/
+body{margin:0;background:#0A0B10;color:#ECEEF3;font-family:Geist,system-ui,sans-serif}
+a{color:#A9B6FF}a:hover{color:#C9D1FF}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; position: relative; overflow: hidden; background: #0A0B10; color: #ECEEF3; font-family: Geist, system-ui, sans-serif; font-size: 16px; display: flex; flex-direction: column">
+  <div style="padding: 44px 24px 0; display: flex; flex-direction: column; gap: 22px; flex: 1">
+    <svg style="flex: none" width="56" height="56" viewBox="0 0 48 48" aria-hidden="true"><path d="M22 30 L4 30 A18 18 0 0 1 22 12 Z" fill="{{accent}}"/><path d="M26 30 L26 12 A18 18 0 0 1 44 30 Z" fill="#6E86FF"/><rect x="4" y="34" width="40" height="5" rx="2.5" fill="#4FD1C5"/></svg>
+    <div style="display: flex; flex-direction: column; gap: 6px"><h1 style="margin: 0; font-size: 30px; font-weight: 600; letter-spacing: -.02em; line-height: 1.15">Welcome, Iryna</h1><span style="color: #C3C8D4">Ministry of [Name] · Logistics</span></div>
+    <div style="display: flex; flex-direction: column; gap: 18px"><div style="display: flex; gap: 14px; align-items: flex-start"><span style="width: 32px; height: 32px; flex: none; border-radius: 11px; display: flex; align-items: center; justify-content: center; font-weight: 700; background: rgba(79,209,197,.18); color: #6FE0D5">✓</span><span style="display: flex; flex-direction: column; gap: 2px"><span style="font-weight: 600">Code from your welcome letter</span><span style="font-size: 14px; color: #C3C8D4; line-height: 1.45">MOI-7Q4K-22XP accepted</span></span></div><div style="display: flex; gap: 14px; align-items: flex-start"><span style="width: 32px; height: 32px; flex: none; border-radius: 11px; display: flex; align-items: center; justify-content: center; font-weight: 700; background: rgba(79,209,197,.18); color: #6FE0D5">✓</span><span style="display: flex; flex-direction: column; gap: 2px"><span style="font-weight: 600">Face unlock is on</span><span style="font-size: 14px; color: #C3C8D4; line-height: 1.45">Needed every time you approve a sign-in</span></span></div><div style="display: flex; gap: 14px; align-items: flex-start"><span style="width: 32px; height: 32px; flex: none; border-radius: 11px; display: flex; align-items: center; justify-content: center; font-weight: 700; background: {{accent}}; color: #0A0B10">3</span><span style="display: flex; flex-direction: column; gap: 2px"><span style="font-weight: 600">This phone becomes your key</span><span style="font-size: 14px; color: #C3C8D4; line-height: 1.45">You’ll scan a code with it to unlock your laptop and to sign documents. No passwords.</span></span></div></div>
+    <div style="padding: 14px; border-radius: 16px; background: #11131A; border: 1px solid #262A35; display: flex; flex-direction: column; gap: 8px; font-size: 14px"><span style="font-weight: 600">What IT can see on this phone</span><span style="color: #6FE0D5">Yes: app version, system version, whether it’s encrypted</span><span style="color: #C3C8D4">No: your photos, messages, calls or location</span></div>
+  </div>
+  <div style="padding: 16px 24px 28px; display: flex; flex-direction: column; gap: 10px"><button style="height: 54px; border-radius: 16px; border: 0; background: {{accent}}; color: #0A0B10; font: 600 17px Geist, sans-serif">Make this phone my key</button><span style="font-size: 13px; color: #A4ABBA; text-align: center">Lost your phone later? IT can turn the key off in one minute.</span></div></div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#8EA2FF","options":["#8EA2FF","#4FD1C5","#C6F06B","#F5A35C"]},"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() { return { accent: this.props.accent ?? '#8EA2FF' }; }
+}
+</script>
+</body>
+</html>

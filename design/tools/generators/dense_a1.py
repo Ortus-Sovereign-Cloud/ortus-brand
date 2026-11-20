@@ -1,0 +1,31 @@
+from dlib import *
+M12="font: 500 12px 'Geist Mono', monospace"
+H="font-size: 13px; font-weight: 500"
+edit('WebSearch',[
+ ('padding: 88px 16px 40px','padding: 40px 16px 40px'),
+ ('gap: 12px; padding: 16px 18px; border-bottom','gap: 14px; padding: 20px 24px; border-bottom'),
+ ('gap: 6px; padding: 10px 18px; border-bottom','gap: 8px; padding: 14px 24px; border-bottom'),
+ ('<div style="padding: 8px; display: flex; flex-direction: column; gap: 2px">','<div style="padding: 12px; display: flex; flex-direction: column; gap: 4px">'),
+ (M12+"; color: #9198A8; padding: 10px 12px 6px; letter-spacing: .06em\">MESSAGES · 3 OF 7",H+"; color: #9198A8; padding: 8px 16px 8px\">Messages · 3 of 7"),
+ (M12+"; color: #9198A8; padding: 14px 12px 6px; letter-spacing: .06em\">FILES",H+"; color: #9198A8; padding: 16px 16px 8px\">Files"),
+ (M12+"; color: #9198A8; padding: 14px 12px 6px; letter-spacing: .06em\">EVENTS",H+"; color: #9198A8; padding: 16px 16px 8px\">Events"),
+ (M12+"; color: #9198A8; padding: 14px 12px 6px; letter-spacing: .06em\">COMMANDS",H+"; color: #9198A8; padding: 16px 16px 8px\">Commands"),
+ ('gap: 12px; align-items: center; padding: 10px 12px; border-radius: 12px','gap: 14px; align-items: center; padding: 12px 16px; border-radius: 14px',5),
+ ('width: 32px; height: 32px; flex: none; border-radius: 10px; background: #F5B57A','width: 40px; height: 40px; flex: none; border-radius: 13px; background: #F5B57A',3),
+ ('<span style="'+M12+'; color: #9198A8">today</span>','<span style="font-size: 13px; color: #9198A8">Today</span>'),
+ ('<span style="'+M12+'; color: #9198A8">tue</span>','<span style="font-size: 13px; color: #9198A8">Tue</span>'),
+ ('<span style="'+M12+'; color: #9198A8">mon</span>','<span style="font-size: 13px; color: #9198A8">Mon</span>'),
+ ('''        <kbd style="font: 500 12px 'Geist Mono', monospace; color: #C3C8D4; border: 1px solid #333846; border-radius: 6px; padding: 2px 6px">↵</kbd>\n''',''),
+ ('gap: 8px; padding: 0 4px">','gap: 12px; padding: 0 4px">'),
+ ('flex-direction: column; gap: 8px; padding: 12px; border-radius: 12px; background: #161922','flex-direction: column; gap: 6px; padding: 16px; border-radius: 14px; background: #161922'),
+ ('''            <span style="font: 600 12px 'Geist Mono', monospace; color: #FF9A92">PDF</span>\n''',''),
+ ('<span style="font-size: 12px; color: #9198A8">{{f.meta}}</span>','<span style="font-size: 13px; color: #9198A8">PDF · {{f.meta}}</span>'),
+ ('width: 32px; height: 32px; border-radius: 10px; background: #1E2230; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 12px; line-height: 1.1"><span style="color: {{accent}}">THU</span>','width: 40px; height: 40px; flex: none; border-radius: 13px; background: #1E2230; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 12px; line-height: 1.15"><span style="color: {{accent}}">Thu</span>'),
+ ('width: 32px; height: 32px; border-radius: 10px; border: 1px solid #333846; display: flex','width: 40px; height: 40px; flex: none; border-radius: 13px; border: 1px solid #333846; display: flex'),
+ ('''          <kbd style="font: 500 12px 'Geist Mono', monospace; color: #9198A8">{{c.key}}</kbd>\n''',''),
+ ("display: flex; gap: 16px; padding: 10px 18px; border-top: 1px solid #1E2129; font: 500 12px 'Geist Mono', monospace; color: #9198A8; flex-wrap: wrap","display: flex; gap: 20px; padding: 14px 24px; border-top: 1px solid #1E2129; font-size: 13px; color: #9198A8; flex-wrap: wrap"),
+ ('<span>↑↓ navigate</span><span>↵ open</span><span>⇥ filter</span><span>Ctrl S save search</span><span style="flex: 1"></span><span>7 results · 38 ms</span>','<span>↑↓ to move</span><span>Enter to open</span><span style="flex: 1"></span><span>7 results</span>'),
+ ("height: 30px; padding: 0 10px; border-radius: 15px;","height: 36px; padding: 0 14px; border-radius: 18px;",2),
+ (", ['has:attachment', false], ['this year', false]]",", ['has:attachment', false]]"),
+ (", { label: 'Archive all results', key: 'Ctrl ⇧ E' }]","]"),
+])

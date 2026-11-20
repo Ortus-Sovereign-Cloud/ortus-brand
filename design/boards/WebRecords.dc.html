@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Case files</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>/*type2*/
+body{margin:0;background:#0A0B10;color:#ECEEF3;font-family:Geist,system-ui,sans-serif}
+a{color:#A9B6FF}a:hover{color:#C9D1FF}
+</style>
+</helmet>
+<div style="display: flex; flex-wrap: wrap; min-height: 900px; background: #07080C">
+<nav aria-label="Apps" style="flex: 0 0 68px; display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 12px 0; background: #07080C; border-right: 1px solid #1E2129; box-sizing: border-box">
+<a href="Main.dc.html" aria-label="Ortus home" style="width: 34px; height: 34px; margin-bottom: 10px; border-radius: 10px; background: {{accent}}; color: #0A0B10; display: flex; align-items: center; justify-content: center; font-weight: 700; text-decoration: none"><svg width="20" height="20" viewBox="0 0 48 48" aria-hidden="true"><g fill="currentColor"><path d="M22 30 L4 30 A18 18 0 0 1 22 12 Z"/><path d="M26 30 L26 12 A18 18 0 0 1 44 30 Z"/><rect x="4" y="34" width="40" height="5" rx="2.5"/></g></svg></a>
+<a href="Main.dc.html" aria-label="Mail" style="position: relative; width: 52px; display: flex; flex-direction: column; align-items: center; gap: 3px; padding: 7px 0; border-radius: 12px; text-decoration: none; font-size: 11px; color: #9198A8"><span aria-hidden="true" style="width: 30px; height: 30px; flex: none; border-radius: 9px; background: linear-gradient(155deg, #1B2350, #0B0D14); box-shadow: inset 0 1px 0 rgba(255,255,255,.08); display: flex; align-items: center; justify-content: center"><svg width="17" height="17" viewBox="0 0 48 48"><rect x="5" y="11" width="38" height="27" rx="6" fill="#8EA2FF"/><path d="M9 16 L24 27 L39 16" fill="none" stroke="#ECEEF3" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Mail</a>
+<a href="WebChat.dc.html" aria-label="Chat" style="position: relative; width: 52px; display: flex; flex-direction: column; align-items: center; gap: 3px; padding: 7px 0; border-radius: 12px; text-decoration: none; font-size: 11px; color: #9198A8"><span aria-hidden="true" style="width: 30px; height: 30px; flex: none; border-radius: 9px; background: linear-gradient(155deg, #1B2350, #0B0D14); box-shadow: inset 0 1px 0 rgba(255,255,255,.08); display: flex; align-items: center; justify-content: center"><svg width="17" height="17" viewBox="0 0 48 48"><circle cx="25" cy="22" r="16" fill="#8EA2FF"/><path d="M12 31 L7 42 L20 36 Z" fill="#8EA2FF"/><circle cx="18" cy="22" r="2.4" fill="#ECEEF3"/><circle cx="25" cy="22" r="2.4" fill="#ECEEF3"/><circle cx="32" cy="22" r="2.4" fill="#ECEEF3"/></svg></span>Chat<span style="position: absolute; right: 8px; top: 5px; width: 7px; height: 7px; border-radius: 50%; background: {{accent}}"></span></a>
+<a href="WebCalendar.dc.html" aria-label="Calendar" style="position: relative; width: 52px; display: flex; flex-direction: column; align-items: center; gap: 3px; padding: 7px 0; border-radius: 12px; text-decoration: none; font-size: 11px; color: #9198A8"><span aria-hidden="true" style="width: 30px; height: 30px; flex: none; border-radius: 9px; background: linear-gradient(155deg, #0E2F2E, #0B0D14); box-shadow: inset 0 1px 0 rgba(255,255,255,.08); display: flex; align-items: center; justify-content: center"><svg width="17" height="17" viewBox="0 0 48 48"><rect x="6" y="8" width="36" height="34" rx="7" fill="#4FD1C5"/><path d="M6 15 A7 7 0 0 1 13 8 H35 A7 7 0 0 1 42 15 V18 H6 Z" fill="#ECEEF3"/><rect x="27" y="27" width="8" height="8" rx="2" fill="#0B0D14"/></svg></span>Calendar</a>
+<a href="WebDrive.dc.html" aria-label="Drive" style="position: relative; width: 52px; display: flex; flex-direction: column; align-items: center; gap: 3px; padding: 7px 0; border-radius: 12px; text-decoration: none; font-size: 11px; color: #9198A8"><span aria-hidden="true" style="width: 30px; height: 30px; flex: none; border-radius: 9px; background: linear-gradient(155deg, #3A2412, #0B0D14); box-shadow: inset 0 1px 0 rgba(255,255,255,.08); display: flex; align-items: center; justify-content: center"><svg width="17" height="17" viewBox="0 0 48 48"><path d="M24 7 L43 17 L24 27 L5 17 Z" fill="#ECEEF3"/><path d="M5 25 L24 35 L43 25" fill="none" stroke="#F5A35C" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 32 L24 42 L43 32" fill="none" stroke="#F5A35C" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" opacity=".55"/></svg></span>Drive</a>
+<a href="WebDocEditor.dc.html" aria-label="Docs" style="position: relative; width: 52px; display: flex; flex-direction: column; align-items: center; gap: 3px; padding: 7px 0; border-radius: 12px; text-decoration: none; font-size: 11px; color: #9198A8"><span aria-hidden="true" style="width: 30px; height: 30px; flex: none; border-radius: 9px; background: linear-gradient(155deg, #3A2412, #0B0D14); box-shadow: inset 0 1px 0 rgba(255,255,255,.08); display: flex; align-items: center; justify-content: center"><svg width="17" height="17" viewBox="0 0 48 48"><path d="M10 9 A4 4 0 0 1 14 5 H28 L38 15 V39 A4 4 0 0 1 34 43 H14 A4 4 0 0 1 10 39 Z" fill="#F5A35C"/><path d="M28 5 V15 H38 Z" fill="#ECEEF3" opacity=".7"/><rect x="16" y="22" width="16" height="3.5" rx="1.75" fill="#ECEEF3"/><rect x="16" y="29" width="16" height="3.5" rx="1.75" fill="#ECEEF3"/><rect x="16" y="36" width="9" height="3.5" rx="1.75" fill="#ECEEF3"/></svg></span>Docs</a>
+<a href="WebTasks.dc.html" aria-label="Tasks" style="position: relative; width: 52px; display: flex; flex-direction: column; align-items: center; gap: 3px; padding: 7px 0; border-radius: 12px; text-decoration: none; font-size: 11px; color: #9198A8"><span aria-hidden="true" style="width: 30px; height: 30px; flex: none; border-radius: 9px; background: linear-gradient(155deg, #0E2F2E, #0B0D14); box-shadow: inset 0 1px 0 rgba(255,255,255,.08); display: flex; align-items: center; justify-content: center"><svg width="17" height="17" viewBox="0 0 48 48"><path d="M6 24 A18 18 0 0 1 24 6 H42 V24 A18 18 0 0 1 24 42 H6 Z" fill="#4FD1C5"/><path d="M15 24 L21.5 30.5 L33 19" fill="none" stroke="#ECEEF3" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Tasks</a>
+<span style="width: 28px; height: 1px; margin: 4px 0; background: #262A35"></span>
+<a href="WebRecords.dc.html" aria-label="Records" aria-current="page" style="position: relative; width: 52px; display: flex; flex-direction: column; align-items: center; gap: 3px; padding: 7px 0; border-radius: 12px; text-decoration: none; font-size: 11px; background: #1E2230; color: {{accent}}; font-weight: 600"><span aria-hidden="true" style="width: 30px; height: 30px; flex: none; border-radius: 9px; background: linear-gradient(155deg, #3A2412, #0B0D14); box-shadow: inset 0 1px 0 rgba(255,255,255,.08); display: flex; align-items: center; justify-content: center"><svg width="17" height="17" viewBox="0 0 48 48"><rect x="5" y="8" width="38" height="10" rx="3.5" fill="#ECEEF3"/><path d="M8 18 H40 V37 A5 5 0 0 1 35 42 H13 A5 5 0 0 1 8 37 Z" fill="#F5A35C"/><circle cx="24" cy="30" r="5" fill="#ECEEF3"/><circle cx="24" cy="30" r="2" fill="#F5A35C"/></svg></span>Records</a>
+<a href="AppSwitcher.dc.html" aria-label="All apps" style="width: 52px; display: flex; flex-direction: column; align-items: center; gap: 3px; padding: 7px 0; border-radius: 12px; text-decoration: none; font-size: 11px; color: #9198A8"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><rect x="14" y="14" width="6" height="6" rx="1"/></svg>All apps</a>
+<span style="flex: 1"></span>
+<a href="WebNotifications.dc.html" aria-label="Notifications, 9 unread" style="position: relative; width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; text-decoration: none; color: #9198A8"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9M10 21h4"/></svg><span style="position: absolute; right: 6px; top: 6px; width: 8px; height: 8px; border-radius: 50%; background: #FF7A6E"></span></a>
+<a href="WebPersonal.dc.html" aria-label="My settings" style="width: 36px; height: 36px; margin-top: 6px; border-radius: 12px; background: #DDE3F8; color: #0A0B10; font-size: 13px; font-weight: 700; display: flex; align-items: center; justify-content: center; text-decoration: none; ">OH</a>
+</nav>
+<div style="flex: 999 1 560px; min-width: 0">
+<div style="display: flex; flex-direction: column; min-height: 900px; background: #0A0B10; color: #ECEEF3; font-family: Geist, system-ui, sans-serif; font-size: 15px">
+  <header style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-bottom: 1px solid #1E2129; flex-wrap: wrap">
+        <span style="font-weight: 600">Records</span>
+    <span style="flex: 1"></span>
+    <button style="height: 36px; padding: 0 12px; border-radius: 10px; border: 1px solid #333846; background: transparent; color: #ECEEF3; font: 500 14px Geist, sans-serif">Register incoming letter</button>
+    <button style="height: 36px; padding: 0 14px; border-radius: 10px; border: 0; background: {{accent}}; color: #0A0B10; font: 600 14px Geist, sans-serif">Open new case</button>
+  </header>
+  <div style="flex: 1; display: flex; flex-wrap: wrap">
+    <nav aria-label="Cases" style="flex: 1 1 300px; max-width: 340px; padding: 14px 10px; border-right: 1px solid #1E2129; display: flex; flex-direction: column; gap: 6px; box-sizing: border-box">
+      <label for="cs" style="position: absolute; left: -9999px">Search cases</label>
+      <input id="cs" placeholder="Case number, subject or party" style="height: 38px; padding: 0 12px; border-radius: 10px; border: 1px solid #262A35; background: #13151C; color: #ECEEF3; font: inherit; margin-bottom: 6px">
+      <sc-for list="{{cases}}" as="c" hint-placeholder-count="5">
+        <a href="#" style="{{c.style}}">
+          <span style="display: flex; gap: 8px; align-items: center"><span style="font: 500 12px 'Geist Mono', monospace; color: #9198A8">{{c.no}}</span><span style="flex: 1"></span><span style="{{c.ss}}">{{c.s}}</span></span>
+          <span style="font-weight: 500">{{c.t}}</span>
+          <span style="font-size: 13px; color: #9198A8">{{c.m}}</span>
+        </a>
+      </sc-for>
+    </nav>
+    <main style="flex: 999 1 560px; min-width: 0; padding: 18px 20px; display: flex; flex-direction: column; gap: 16px">
+      <div style="display: flex; flex-direction: column; gap: 6px">
+        <span style="font: 500 13px 'Geist Mono', monospace; color: #9198A8">CASE 2026/EM/0114 · FILE PLAN 4.2.1 EMERGENCY PLANNING</span>
+        <h1 style="margin: 0; font-size: 24px; font-weight: 600; letter-spacing: -.02em">Flood response 2026 · River [Name]</h1>
+        <div style="display: flex; gap: 6px; flex-wrap: wrap">
+          <span style="font: 500 12px 'Geist Mono', monospace; padding: 3px 7px; border-radius: 6px; background: rgba(245,163,92,.15); color: #F5B57A">OFFICIAL-SENSITIVE</span>
+          <span style="font: 500 12px 'Geist Mono', monospace; padding: 3px 7px; border-radius: 6px; background: #1E2230; color: #C3C8D4">KEEP 10 YEARS, THEN NATIONAL ARCHIVE</span>
+          <span style="font: 500 12px 'Geist Mono', monospace; padding: 3px 7px; border-radius: 6px; background: rgba(255,122,110,.12); color: #FF9A92">LEGAL HOLD</span>
+        </div>
+      </div>
+      <div style="display: flex; gap: 0; align-items: center; flex-wrap: wrap">
+        <sc-for list="{{life}}" as="l" hint-placeholder-count="5">
+          <span style="{{l.style}}">{{l.n}}</span>
+        </sc-for>
+      </div>
+      <section aria-label="Documents in case" style="border-radius: 18px; background: #11131A; border: 1px solid #1E2129; overflow-x: auto">
+        <div style="min-width: 620px">
+          <div style="display: grid; grid-template-columns: 110px minmax(0, 2fr) minmax(0, 1fr) 110px 120px; gap: 12px; padding: 10px 16px; border-bottom: 1px solid #1E2129; font: 500 12px 'Geist Mono', monospace; color: #9198A8"><span>REF</span><span>RECORD</span><span>SOURCE</span><span>DATE</span><span>STATUS</span></div>
+          <sc-for list="{{docs}}" as="d" hint-placeholder-count="6">
+            <div style="display: grid; grid-template-columns: 110px minmax(0, 2fr) minmax(0, 1fr) 110px 120px; gap: 12px; align-items: center; padding: 10px 16px; border-bottom: 1px solid #1A1D25">
+              <span style="font: 500 13px 'Geist Mono', monospace; color: #9198A8">{{d.ref}}</span>
+              <span style="font-weight: 500">{{d.t}}</span>
+              <span style="color: #C3C8D4">{{d.src}}</span>
+              <span style="font: 500 13px 'Geist Mono', monospace; color: #9198A8">{{d.date}}</span>
+              <span style="{{d.ss}}">{{d.s}}</span>
+            </div>
+          </sc-for>
+        </div>
+      </section>
+      <span style="font-size: 13px; color: #9198A8">Drag mail, chat decisions or Drive files here to file them. Declared records can’t be edited or deleted; only new versions are added.</span>
+    </main>
+  </div>
+</div>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#8EA2FF","options":["#8EA2FF","#4FD1C5","#C6F06B","#F5A35C"]},"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const accent = this.props.accent ?? '#8EA2FF';
+    const pill = (bg, c) => 'justify-self: start; font: 500 12px Geist Mono, monospace; padding: 3px 7px; border-radius: 6px; background: ' + bg + '; color: ' + c;
+    const OPEN = pill('rgba(142,162,255,.15)', '#A9B6FF'), DONE = pill('rgba(79,209,197,.12)', '#6FE0D5'), WAIT = pill('rgba(245,163,92,.15)', '#F5B57A'), GREY = pill('#1E2230', '#C3C8D4');
+    const cases = [
+      ['2026/EM/0114', 'Flood response 2026', 'Owner Marek · 41 records', 'OPEN', OPEN, true],
+      ['2026/PR/0087', 'Bus procurement', 'Owner Olena · tender', 'IN APPROVAL', WAIT],
+      ['2026/CI/1302', 'Citizen report · car damage, Mill Lane', 'Answer due today 16:05', 'OPEN', OPEN],
+      ['2025/EM/0091', 'Storm response 2025', 'Closed Mar 2026', 'CLOSED', GREY],
+      ['2019/EM/0012', 'Flood 2019', 'Sent to archive 2025', 'ARCHIVED', DONE]
+    ].map(([no, t, m, s, ss, sel]) => ({ no, t, m, s, ss, style: 'display: flex; flex-direction: column; gap: 4px; padding: 10px 12px; border-radius: 12px; text-decoration: none; color: #ECEEF3; ' + (sel ? 'background: #1A1D27; box-shadow: inset 2px 0 0 ' + accent : '') }));
+    const steps = ['Opened', 'Working', 'Decision', 'Closed', 'Archived'];
+    const life = steps.map((n, i) => ({ n, style: 'height: 32px; padding: 0 14px; display: flex; align-items: center; font: 500 13px Geist, sans-serif; border-radius: ' + (i === 0 ? '10px 0 0 10px' : i === 4 ? '0 10px 10px 0' : '0') + '; ' + (i < 1 ? 'background: rgba(79,209,197,.15); color: #6FE0D5' : i === 1 ? 'background: ' + accent + '; color: #0A0B10; font-weight: 600' : 'background: #13151C; color: #9198A8') }));
+    const docs = [
+      ['0114-001', 'Opening note and mandate', 'Drive · Marek', '02 Nov', 'RECORD', DONE],
+      ['0114-014', 'Letter from River Authority (scanned)', 'Registered post', '12 Nov', 'RECORD', DONE],
+      ['0114-027', 'Decision: close road R-12', 'Chat decision 10:47', '18 Nov', 'RECORD', DONE],
+      ['0114-031', 'Email: police escort schedule', 'Mail · Jonas Weber', '18 Nov', 'RECORD', DONE],
+      ['0114-033', 'Flood response plan v12', 'Docs', '18 Nov', 'IN APPROVAL', WAIT],
+      ['0114-034', 'Shelter capacity sheet', 'Drive · live', '18 Nov', 'DRAFT', GREY]
+    ].map(([ref, t, src, date, s, ss]) => ({ ref, t, src, date, s, ss }));
+    return { accent, cases, life, docs };
+  }
+}
+</script>
+</body>
+</html>

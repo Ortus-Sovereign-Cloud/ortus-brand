@@ -1,0 +1,32 @@
+import sys; sys.path.insert(0,'/tmp/claude-1002/-home-bohdaq-git/6b5adcb0-31d6-44c8-b201-55c34d7527ea/scratchpad/gen')
+from dense_lib import edit
+M="font: 500 12px 'Geist Mono', monospace"
+edit('WebCall',[
+ ('gap: 12px; padding: 12px 16px; flex-wrap: wrap">','gap: 14px; padding: 14px 24px; flex-wrap: wrap">'),
+ ('aria-label="Back to channel" style="width: 36px; height: 36px; border-radius: 10px;','aria-label="Back to channel" style="width: 40px; height: 40px; border-radius: 12px;'),
+ ('<span style="'+M+'; color: #FF9A92; display: flex; align-items: center; gap: 6px"><span style="width: 7px; height: 7px; border-radius: 50%; background: #FF7A6E"></span>REC 24:13</span>','<span style="font-size: 13px; font-weight: 500; font-variant-numeric: tabular-nums; color: #FF9A92; display: flex; align-items: center; gap: 8px"><span style="width: 8px; height: 8px; border-radius: 50%; background: #FF7A6E"></span>Recording · 24:13</span>'),
+ ('<span style="'+M+'; color: #6FE0D5">E2EE · MEDIA STAYS ON [HOST].GOV</span>','<span style="font-size: 13px; color: #6FE0D5">End-to-end encrypted</span>'),
+ ('gap: 12px; padding: 0 16px 12px">','gap: 16px; padding: 0 24px 16px">'),
+ ('gap: 10px; padding: 10px 14px; border-bottom: 1px solid #1E2129">\n        <span style="width: 26px; height: 26px; border-radius: 7px; background: rgba(79,209,197,.15); color: #6FE0D5; font: 600 8px \'Geist Mono\', monospace;','gap: 12px; padding: 14px 20px; border-bottom: 1px solid #1E2129">\n        <span style="width: 34px; height: 34px; border-radius: 9px; background: rgba(79,209,197,.15); color: #6FE0D5; font: 600 11px Geist, sans-serif;'),
+ ('<span style="width: 22px; height: 22px; border-radius: 7px; background: #A9B6FF; border: 2px solid #11131A"></span><span style="width: 22px; height: 22px; border-radius: 7px; background: #F5B57A; border: 2px solid #11131A; margin-left: -6px"></span><span style="width: 22px; height: 22px; border-radius: 7px; background: #C6F06B; border: 2px solid #11131A; margin-left: -6px"></span>','<span style="font-size: 13px; color: #9198A8">3 editing</span>'),
+ ('<div style="flex: 1; padding: 14px; overflow-x: auto">','<div style="flex: 1; padding: 20px; overflow-x: auto">'),
+ ("font: 14px 'Geist Mono', monospace; border: 1px solid #262A35; border-radius: 10px; overflow: hidden","font: 15px Geist, sans-serif; font-variant-numeric: tabular-nums; border: 1px solid #262A35; border-radius: 12px; overflow: hidden"),
+ ('max-width: 360px; display: flex; flex-direction: column; gap: 10px">','max-width: 360px; display: flex; flex-direction: column; gap: 16px">'),
+ ('grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px">','grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px">'),
+ ('<span style="position: absolute; left: 10px; bottom: 8px; font-size: 13px; font-weight: 500">{{p.name}}</span>','<span style="position: absolute; left: 12px; bottom: 10px; font-size: 13px; font-weight: 500">{{p.name}}</span>'),
+ ('<span style="position: absolute; right: 8px; bottom: 8px; '+M+'; color: #9198A8">MUTED</span>','<span style="position: absolute; right: 12px; bottom: 10px; font-size: 13px; color: #9198A8">Muted</span>'),
+ ('<div style="flex: 1; padding: 14px; border-radius: 18px; background: #11131A; border: 1px solid #1E2129; display: flex; flex-direction: column; gap: 10px">','<div style="flex: 1; padding: 20px; border-radius: 18px; background: #11131A; border: 1px solid #1E2129; display: flex; flex-direction: column; gap: 12px">'),
+ ('<span style="'+M+'; color: {{accent}}">LIVE NOTES · ON-PREM TRANSCRIPTION</span>','<span style="font-size: 13px; font-weight: 600; color: {{accent}}">Live notes</span>'),
+ ('<strong style="color: #ECEEF3">Marek:</strong> District 4 is at 92% capacity, we need the school by tonight.','<strong style="color: #ECEEF3">Marek:</strong> District 4 is at 92%, we need the school by tonight.'),
+ ('margin-top: auto; padding: 10px; border-radius: 12px; background: #161922; font-size: 14px; display: flex; flex-direction: column; gap: 4px">','margin-top: auto; padding: 14px 16px; border-radius: 14px; background: #161922; font-size: 14px; display: flex; flex-direction: column; gap: 8px">'),
+ ('<span style="'+M+'; color: #9198A8">ACTION ITEMS SO FAR</span>','<span style="font-size: 13px; font-weight: 500; color: #9198A8">Action items</span>'),
+ ('padding: 0 16px 20px">','padding: 0 24px 24px">'),
+ ("['DISTRICT', 'BEDS', 'USED', '%']","['District', 'Beds', 'Used', 'Full']"),
+ ("s: 'padding: 10px 12px; border-bottom","s: 'padding: 16px 18px; border-bottom"),
+ ("'background: #161922; color: #9198A8; font-size: 12px'","'background: #161922; color: #9198A8; font-size: 13px'"),
+ ("'position: relative; height: 120px; border-radius: 16px;","'position: relative; height: 112px; border-radius: 16px;"),
+ ("['Mute', 'Camera', 'Share screen', 'Raise hand', 'Captions']","['Mute', 'Camera', 'Share screen', 'Raise hand']"),
+ ("const btn = 'height: 44px; padding: 0 16px;","const btn = 'height: 44px; padding: 0 20px;"),
+ ("height: 44px; padding: 0 18px; border-radius: 14px; border: 0; background: #FF7A6E","height: 44px; padding: 0 22px; border-radius: 14px; border: 0; background: #FF7A6E"),
+ ('width: 52px; height: 52px; border-radius: 18px; background: {{p.bg}}','width: 48px; height: 48px; margin-bottom: 14px; border-radius: 16px; background: {{p.bg}}'),
+])

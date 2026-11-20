@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Ortus OS first boot</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@700&family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>/*type2*/
+body{margin:0}
+</style>
+</helmet>
+<div style="width: 1440px; height: 900px; box-sizing: border-box; background: radial-gradient(700px 520px at 18% 78%, rgba(79,209,197,.45), transparent 70%), radial-gradient(800px 600px at 82% 20%, rgba(110,134,255,.6), transparent 70%), radial-gradient(600px 500px at 55% 60%, rgba(160,110,255,.35), transparent 70%), linear-gradient(160deg, #0B1030 0%, #07080C 100%); color: #ECEEF3; font-family: Geist, system-ui, sans-serif; font-size: 15px; display: flex; flex-direction: column; padding: 32px 48px">
+  <header style="display: flex; align-items: center; gap: 12px">
+    <svg width="30" height="30" viewBox="0 0 48 48" aria-hidden="true"><path d="M22 30 L4 30 A18 18 0 0 1 22 12 Z" fill="{{accent}}"/><path d="M26 30 L26 12 A18 18 0 0 1 44 30 Z" fill="#6E86FF"/><rect x="4" y="34" width="40" height="5" rx="2.5" fill="#4FD1C5"/></svg>
+    <span style="font: 700 20px Unbounded, sans-serif">Ortus OS</span>
+    <span style="flex: 1"></span>
+    <span style="font: 500 12px 'Geist Mono', monospace; color: #9198A8">STEP 3 OF 5 · ENROL THIS DEVICE</span>
+  </header>
+  <div style="display: flex; gap: 6px; margin: 22px 0 0">
+    <sc-for list="{{steps}}" as="s" hint-placeholder-count="5"><span style="{{s.bar}}"></span></sc-for>
+  </div>
+  <main style="flex: 1; display: flex; align-items: center; justify-content: center; gap: 72px">
+    <section style="width: 460px; display: flex; flex-direction: column; gap: 18px">
+      <h1 style="margin: 0; font-size: 34px; font-weight: 600; letter-spacing: -.02em; line-height: 1.15">Connect this computer to your organisation</h1>
+      <p style="margin: 0; color: #9198A8; line-height: 1.6">An IT administrator scans this code with the Ortus app, or you enter the enrolment code from your welcome letter. The device then downloads its policy, apps and certificates.</p>
+      <div style="display: flex; flex-direction: column; gap: 10px">
+        <sc-for list="{{checks}}" as="c" hint-placeholder-count="5">
+          <span style="display: flex; align-items: center; gap: 10px"><span style="{{c.dot}}">{{c.i}}</span><span style="flex: 1">{{c.t}}</span><span style="font: 500 12px 'Geist Mono', monospace; color: #9198A8">{{c.v}}</span></span>
+        </sc-for>
+      </div>
+      <label style="display: flex; flex-direction: column; gap: 6px; margin-top: 6px"><span style="font-size: 13px; color: #9198A8">Or enter enrolment code</span><input value="MOI-7Q4K-22XP" style="height: 46px; padding: 0 14px; border-radius: 12px; border: 1px solid #333846; background: #0A0B10; color: #ECEEF3; font: 500 16px 'Geist Mono', monospace; letter-spacing: .08em"></label>
+    </section>
+    <section aria-label="Enrolment QR" style="width: 380px; padding: 30px; border-radius: 28px; background: rgba(17,19,26,.85); border: 1px solid #262A35; display: flex; flex-direction: column; align-items: center; gap: 16px">
+      <div role="img" aria-label="Enrolment QR code" style="width: 230px; height: 230px; padding: 14px; border-radius: 18px; background: #FFFFFF">
+        <div style="display: grid; grid-template-columns: repeat(25, minmax(0, 1fr)); width: 230px; height: 230px"><sc-for list="{{qr}}" as="q" hint-placeholder-count="625"><span style="{{q}}"></span></sc-for></div>
+      </div>
+      <span style="font-weight: 600">Serial PF3K-1301 · ThinkPad T14 Gen 6</span>
+      <span style="font: 500 12px 'Geist Mono', monospace; color: #9198A8; text-align: center">TPM 2.0 · SECURE BOOT ON · DISK ENCRYPTED</span>
+    </section>
+  </main>
+  <footer style="display: flex; align-items: center; gap: 12px">
+    <button style="height: 44px; padding: 0 16px; border-radius: 12px; border: 1px solid #333846; background: transparent; color: #ECEEF3; font: 500 15px Geist, sans-serif">Back</button>
+    <span style="flex: 1; text-align: center; font-size: 13px; color: #8A91A1">Personal device? Choose “Use without organisation”; you can enrol later.</span>
+    <button style="height: 44px; padding: 0 20px; border-radius: 12px; border: 0; background: {{accent}}; color: #0A0B10; font: 600 15px Geist, sans-serif">Waiting for approval…</button>
+  </footer>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#8EA2FF","options":["#8EA2FF","#4FD1C5","#C6F06B","#F5A35C"]},"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const accent = this.props.accent ?? '#8EA2FF';
+    const steps = [0, 1, 2, 3, 4].map((i) => ({ bar: 'flex: 1; height: 4px; border-radius: 2px; background: ' + (i < 2 ? '#4FD1C5' : i === 2 ? accent : '#1E2230') }));
+    const ok = 'width: 24px; height: 24px; border-radius: 8px; background: rgba(79,209,197,.15); color: #6FE0D5; font-size: 13px; display: flex; align-items: center; justify-content: center';
+    const wait = 'width: 24px; height: 24px; border-radius: 8px; background: #1E2230; color: #9198A8; font-size: 13px; display: flex; align-items: center; justify-content: center';
+    const checks = [['Language and keyboard', 'Українська / EN', 1], ['Network', 'GOV-LAN', 1], ['Hardware check', 'TPM · Secure Boot', 1], ['Organisation policy', 'waiting', 0], ['Apps and certificates', 'after approval', 0]].map(([t, v, d]) => ({ t, v, i: d ? '✓' : '·', dot: d ? ok : wait }));
+    const N = 25, qr = []; let seed = 11;
+    const rnd = () => { seed = (seed * 9301 + 49297) % 233280; return seed / 233280; };
+    const f = (r, c, r0, c0) => { const y = r - r0, x = c - c0; if (y < 0 || x < 0 || y > 6 || x > 6) return null; return y === 0 || y === 6 || x === 0 || x === 6 || (y >= 2 && y <= 4 && x >= 2 && x <= 4); };
+    for (let r = 0; r < N; r++) for (let c = 0; c < N; c++) { let on = f(r, c, 0, 0); if (on === null) on = f(r, c, 0, N - 7); if (on === null) on = f(r, c, N - 7, 0); const z = (r < 8 && c < 8) || (r < 8 && c >= N - 8) || (r >= N - 8 && c < 8); if (on === null) on = z ? false : rnd() > 0.52; qr.push('display: block; background: ' + (on ? '#0A0B10' : '#FFFFFF')); }
+    return { accent, steps, checks, qr };
+  }
+}
+</script>
+</body>
+</html>

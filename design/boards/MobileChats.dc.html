@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Mobile chats</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>/*type2*//*dense2*/
+body{margin:0}
+a{color:#A9B6FF}a:hover{color:#C9D1FF}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; position: relative; overflow: hidden; background: #0A0B10; color: #ECEEF3; font-family: Geist, system-ui, sans-serif; font-size: 15px; display: flex; flex-direction: column">
+  <header style="padding: 18px 16px 10px; display: flex; flex-direction: column; gap: 14px">
+    <div style="display: flex; align-items: center; gap: 10px">
+      <h1 style="margin: 0; flex: 1; font-size: 30px; font-weight: 600; letter-spacing: -.03em">Chat</h1>
+      <button aria-label="New conversation" style="width: 44px; height: 44px; border-radius: 14px; background: #13151C; border: 1px solid #262A35; color: #ECEEF3"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg></button>
+    </div>
+    <a href="MobileChannel.dc.html" style="display: flex; align-items: center; gap: 12px; padding: 12px 14px; border-radius: 16px; background: rgba(79,209,197,.08); border: 1px solid rgba(79,209,197,.3); text-decoration: none; color: #ECEEF3">
+      <span style="width: 8px; height: 8px; border-radius: 50%; background: #4FD1C5"></span>
+      <span style="flex: 1; display: flex; flex-direction: column"><span style="font-weight: 500">Call in # flood-response-2026</span><span style="font-size: 13px; color: #9198A8">6 people · 24 min</span></span>
+      <span style="height: 32px; padding: 0 14px; border-radius: 10px; background: #4FD1C5; color: #0A0B10; display: flex; align-items: center; font-weight: 600; font-size: 13px">Join</span>
+    </a>
+    <div style="display: flex; gap: 6px">
+      <button style="height: 36px; padding: 0 14px; border-radius: 12px; border: 0; background: #ECEEF3; color: #0A0B10; font: 600 13px Geist, sans-serif">All</button>
+      <button style="height: 36px; padding: 0 14px; border-radius: 12px; border: 1px solid #262A35; background: transparent; color: #C3C8D4; font: 500 13px Geist, sans-serif">Unread 5</button>
+      <button style="height: 36px; padding: 0 14px; border-radius: 12px; border: 1px solid #262A35; background: transparent; color: #C3C8D4; font: 500 13px Geist, sans-serif">Mentions 2</button>
+    </div>
+  </header>
+
+  <div style="flex: 1; overflow: hidden; padding: 0 8px; display: flex; flex-direction: column; gap: 2px">
+    <sc-for list="{{rows}}" as="r" hint-placeholder-count="7">
+      <a href="MobileChannel.dc.html" style="display: flex; align-items: center; gap: 12px; padding: 12px; border-radius: 16px; text-decoration: none; color: #ECEEF3">
+        <span style="{{r.av}}">{{r.i}}</span>
+        <span style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 4px">
+          <span style="display: flex; gap: 6px; align-items: center"><span style="{{r.nameStyle}}">{{r.name}}</span><sc-if value="{{r.ext}}" hint-placeholder-val="{{ false }}"><span style="font: 500 13px Geist, sans-serif; font-variant-numeric: tabular-nums; padding: 1px 7px; border-radius: 7px; background: rgba(245,163,92,.15); color: #F5B57A">External</span></sc-if><span style="flex: 1"></span><span style="font: 500 13px Geist, sans-serif; font-variant-numeric: tabular-nums; color: #9198A8">{{r.t}}</span></span>
+          <span style="display: flex; gap: 8px; align-items: center"><span style="flex: 1; min-width: 0; font-size: 14px; color: #9198A8; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">{{r.last}}</span><sc-if value="{{r.n}}" hint-placeholder-val="{{ false }}"><span style="font: 600 13px Geist, sans-serif; font-variant-numeric: tabular-nums; min-width: 20px; height: 20px; padding: 0 5px; box-sizing: border-box; border-radius: 10px; background: {{accent}}; color: #0A0B10; display: flex; align-items: center; justify-content: center">{{r.n}}</span></sc-if></span>
+        </span>
+      </a>
+    </sc-for>
+  </div>
+
+  <nav aria-label="Main" style="position: absolute; left: 12px; right: 12px; bottom: 16px; height: 64px; border-radius: 22px; background: rgba(23,26,35,.92); border: 1px solid #2A2E3A; backdrop-filter: blur(16px); display: grid; grid-template-columns: repeat(5, minmax(0, 1fr))">
+    <a href="MobileInbox.dc.html" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; text-decoration: none; color: #9198A8; font-size: 12px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M22 12h-6l-2 3h-4l-2-3H2"/><path d="M5.5 5h13L22 12v7H2v-7Z"/></svg>Mail</a>
+    <a href="#" aria-current="page" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; text-decoration: none; color: {{accent}}; font-size: 12px; font-weight: 600"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12Z"/></svg>Chat</a>
+    <a href="MobileCalendar.dc.html" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; text-decoration: none; color: #9198A8; font-size: 12px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Calendar</a>
+    <a href="MobileDrive.dc.html" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; text-decoration: none; color: #9198A8; font-size: 12px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h7l2 2h9v11H3Z"/></svg>Files</a>
+    <a href="MobileMore.dc.html" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; text-decoration: none; color: #9198A8; font-size: 12px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><rect x="14" y="14" width="6" height="6" rx="1"/></svg>More</a>
+  </nav>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#8EA2FF","options":["#8EA2FF","#4FD1C5","#C6F06B","#F5A35C"]},"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const raw = [
+      ['#', '#1E2230', '# flood-response-2026', 'Jonas: Two units are on the way to R-12', '10:58', 3, true],
+      ['AK', '#F5B57A', 'Anna Kowalska', 'Sent the gauge photos', '10:52', 1, true],
+      ['#', '#1E2230', '# procurement', 'Marek: tender closes Friday', '09:40', 1],
+      ['MN', '#A9B6FF', 'Marek Nowak', 'You: ok, see you at 2', '09:12', 0],
+      ['#', '#1E2230', '# all-staff', 'Holiday schedule is in Drive', 'Mon', 0],
+      ['#', '#1E2230', '# joint-task-force', 'Weekly sync moved to Thu', 'Mon', 0, true],
+      ['JW', '#C6F06B', 'Jonas Weber', 'Thanks!', 'Sun', 0, true]
+    ];
+    const rows = raw.map(([i, bg, name, last, t, n, ext]) => ({
+      i, name, last, t, n: n ? String(n) : '', ext: !!ext,
+      av: 'width: 46px; height: 46px; flex: none; border-radius: 15px; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: ' + (i === '#' ? '18px' : '13px') + '; background: ' + bg + '; color: ' + (i === '#' ? '#C3C8D4' : '#0A0B10'),
+      nameStyle: 'min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-weight: ' + (n ? '600' : '500')
+    }));
+    return { accent: this.props.accent ?? '#8EA2FF', rows };
+  }
+}
+</script>
+</body>
+</html>

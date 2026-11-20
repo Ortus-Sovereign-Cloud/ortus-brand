@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Command palette search</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>/*type2*//*dense2*/
+body{margin:0;background:#0A0B10;color:#ECEEF3;font-family:Geist,system-ui,sans-serif}
+a{color:#A9B6FF}a:hover{color:#C9D1FF}
+mark{background:rgba(142,162,255,.28);color:#FFFFFF;border-radius:3px;padding:0 2px}
+</style>
+</helmet>
+<div style="display: flex; flex-wrap: wrap; min-height: 900px; background: #07080C">
+<nav aria-label="Apps" style="flex: 0 0 68px; display: flex; flex-direction: column; align-items: center; gap: 4px; padding: 12px 0; background: #07080C; border-right: 1px solid #1E2129; box-sizing: border-box">
+<a href="Main.dc.html" aria-label="Ortus home" style="width: 34px; height: 34px; margin-bottom: 10px; border-radius: 10px; background: {{accent}}; color: #0A0B10; display: flex; align-items: center; justify-content: center; font-weight: 700; text-decoration: none"><svg width="20" height="20" viewBox="0 0 48 48" aria-hidden="true"><g fill="currentColor"><path d="M22 30 L4 30 A18 18 0 0 1 22 12 Z"/><path d="M26 30 L26 12 A18 18 0 0 1 44 30 Z"/><rect x="4" y="34" width="40" height="5" rx="2.5"/></g></svg></a>
+<a href="Main.dc.html" aria-label="Mail" aria-current="page" style="position: relative; width: 52px; display: flex; flex-direction: column; align-items: center; gap: 3px; padding: 7px 0; border-radius: 12px; text-decoration: none; font-size: 11px; background: #1E2230; color: {{accent}}; font-weight: 600"><span aria-hidden="true" style="width: 30px; height: 30px; flex: none; border-radius: 9px; background: linear-gradient(155deg, #1B2350, #0B0D14); box-shadow: inset 0 1px 0 rgba(255,255,255,.08); display: flex; align-items: center; justify-content: center"><svg width="17" height="17" viewBox="0 0 48 48"><rect x="5" y="11" width="38" height="27" rx="6" fill="#8EA2FF"/><path d="M9 16 L24 27 L39 16" fill="none" stroke="#ECEEF3" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Mail</a>
+<a href="WebChat.dc.html" aria-label="Chat" style="position: relative; width: 52px; display: flex; flex-direction: column; align-items: center; gap: 3px; padding: 7px 0; border-radius: 12px; text-decoration: none; font-size: 11px; color: #9198A8"><span aria-hidden="true" style="width: 30px; height: 30px; flex: none; border-radius: 9px; background: linear-gradient(155deg, #1B2350, #0B0D14); box-shadow: inset 0 1px 0 rgba(255,255,255,.08); display: flex; align-items: center; justify-content: center"><svg width="17" height="17" viewBox="0 0 48 48"><circle cx="25" cy="22" r="16" fill="#8EA2FF"/><path d="M12 31 L7 42 L20 36 Z" fill="#8EA2FF"/><circle cx="18" cy="22" r="2.4" fill="#ECEEF3"/><circle cx="25" cy="22" r="2.4" fill="#ECEEF3"/><circle cx="32" cy="22" r="2.4" fill="#ECEEF3"/></svg></span>Chat<span style="position: absolute; right: 8px; top: 5px; width: 7px; height: 7px; border-radius: 50%; background: {{accent}}"></span></a>
+<a href="WebCalendar.dc.html" aria-label="Calendar" style="position: relative; width: 52px; display: flex; flex-direction: column; align-items: center; gap: 3px; padding: 7px 0; border-radius: 12px; text-decoration: none; font-size: 11px; color: #9198A8"><span aria-hidden="true" style="width: 30px; height: 30px; flex: none; border-radius: 9px; background: linear-gradient(155deg, #0E2F2E, #0B0D14); box-shadow: inset 0 1px 0 rgba(255,255,255,.08); display: flex; align-items: center; justify-content: center"><svg width="17" height="17" viewBox="0 0 48 48"><rect x="6" y="8" width="36" height="34" rx="7" fill="#4FD1C5"/><path d="M6 15 A7 7 0 0 1 13 8 H35 A7 7 0 0 1 42 15 V18 H6 Z" fill="#ECEEF3"/><rect x="27" y="27" width="8" height="8" rx="2" fill="#0B0D14"/></svg></span>Calendar</a>
+<a href="WebDrive.dc.html" aria-label="Drive" style="position: relative; width: 52px; display: flex; flex-direction: column; align-items: center; gap: 3px; padding: 7px 0; border-radius: 12px; text-decoration: none; font-size: 11px; color: #9198A8"><span aria-hidden="true" style="width: 30px; height: 30px; flex: none; border-radius: 9px; background: linear-gradient(155deg, #3A2412, #0B0D14); box-shadow: inset 0 1px 0 rgba(255,255,255,.08); display: flex; align-items: center; justify-content: center"><svg width="17" height="17" viewBox="0 0 48 48"><path d="M24 7 L43 17 L24 27 L5 17 Z" fill="#ECEEF3"/><path d="M5 25 L24 35 L43 25" fill="none" stroke="#F5A35C" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 32 L24 42 L43 32" fill="none" stroke="#F5A35C" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" opacity=".55"/></svg></span>Drive</a>
+<a href="WebDocEditor.dc.html" aria-label="Docs" style="position: relative; width: 52px; display: flex; flex-direction: column; align-items: center; gap: 3px; padding: 7px 0; border-radius: 12px; text-decoration: none; font-size: 11px; color: #9198A8"><span aria-hidden="true" style="width: 30px; height: 30px; flex: none; border-radius: 9px; background: linear-gradient(155deg, #3A2412, #0B0D14); box-shadow: inset 0 1px 0 rgba(255,255,255,.08); display: flex; align-items: center; justify-content: center"><svg width="17" height="17" viewBox="0 0 48 48"><path d="M10 9 A4 4 0 0 1 14 5 H28 L38 15 V39 A4 4 0 0 1 34 43 H14 A4 4 0 0 1 10 39 Z" fill="#F5A35C"/><path d="M28 5 V15 H38 Z" fill="#ECEEF3" opacity=".7"/><rect x="16" y="22" width="16" height="3.5" rx="1.75" fill="#ECEEF3"/><rect x="16" y="29" width="16" height="3.5" rx="1.75" fill="#ECEEF3"/><rect x="16" y="36" width="9" height="3.5" rx="1.75" fill="#ECEEF3"/></svg></span>Docs</a>
+<a href="WebTasks.dc.html" aria-label="Tasks" style="position: relative; width: 52px; display: flex; flex-direction: column; align-items: center; gap: 3px; padding: 7px 0; border-radius: 12px; text-decoration: none; font-size: 11px; color: #9198A8"><span aria-hidden="true" style="width: 30px; height: 30px; flex: none; border-radius: 9px; background: linear-gradient(155deg, #0E2F2E, #0B0D14); box-shadow: inset 0 1px 0 rgba(255,255,255,.08); display: flex; align-items: center; justify-content: center"><svg width="17" height="17" viewBox="0 0 48 48"><path d="M6 24 A18 18 0 0 1 24 6 H42 V24 A18 18 0 0 1 24 42 H6 Z" fill="#4FD1C5"/><path d="M15 24 L21.5 30.5 L33 19" fill="none" stroke="#ECEEF3" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Tasks</a>
+<a href="AppSwitcher.dc.html" aria-label="All apps" style="width: 52px; display: flex; flex-direction: column; align-items: center; gap: 3px; padding: 7px 0; border-radius: 12px; text-decoration: none; font-size: 11px; color: #9198A8"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="6" height="6" rx="1"/><rect x="14" y="4" width="6" height="6" rx="1"/><rect x="4" y="14" width="6" height="6" rx="1"/><rect x="14" y="14" width="6" height="6" rx="1"/></svg>All apps</a>
+<span style="flex: 1"></span>
+<a href="WebNotifications.dc.html" aria-label="Notifications, 9 unread" style="position: relative; width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; text-decoration: none; color: #9198A8"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9M10 21h4"/></svg><span style="position: absolute; right: 6px; top: 6px; width: 8px; height: 8px; border-radius: 50%; background: #FF7A6E"></span></a>
+<a href="WebPersonal.dc.html" aria-label="My settings" style="width: 36px; height: 36px; margin-top: 6px; border-radius: 12px; background: #DDE3F8; color: #0A0B10; font-size: 13px; font-weight: 700; display: flex; align-items: center; justify-content: center; text-decoration: none; ">OH</a>
+</nav>
+<div style="flex: 999 1 560px; min-width: 0">
+<div style="min-height: 900px; background: #07080C; color: #ECEEF3; font-family: Geist, system-ui, sans-serif; font-size: 15px; padding: 24px 16px 24px; box-sizing: border-box; display: flex; justify-content: center">
+  <div role="dialog" aria-label="Search and commands" style="width: 100%; max-width: 760px; align-self: flex-start; border-radius: 22px; background: #11131A; border: 1px solid #2A2E3A; box-shadow: 0 30px 80px rgba(0,0,0,.6), 0 0 0 6px rgba(142,162,255,.06); overflow: hidden">
+    <div style="display: flex; align-items: center; gap: 14px; padding: 20px 24px; border-bottom: 1px solid #1E2129">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="{{accent}}" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <label for="q" style="position: absolute; left: -9999px">Search</label>
+      <input id="q" value="gauge anna" style="flex: 1; border: 0; outline: none; background: transparent; color: #ECEEF3; font: 500 18px Geist, sans-serif">
+      <kbd style="font: 500 12px 'Geist Mono', monospace; color: #9198A8; border: 1px solid #333846; border-radius: 6px; padding: 2px 6px">esc</kbd>
+    </div>
+    <div style="display: flex; gap: 8px; padding: 14px 24px; border-bottom: 1px solid #1E2129; flex-wrap: wrap">
+      <sc-for list="{{chips}}" as="c" hint-placeholder-count="6">
+        <button style="{{c.style}}">{{c.label}}</button>
+      </sc-for>
+    </div>
+
+    <div style="padding: 12px; display: flex; flex-direction: column; gap: 4px">
+      <div style="font-size: 13px; font-weight: 500; color: #9198A8; padding: 8px 16px 8px">Messages · 3 of 7</div>
+      <a href="Main.dc.html" style="display: flex; gap: 14px; align-items: center; padding: 12px 16px; border-radius: 14px; background: #1A1D27; box-shadow: inset 0 0 0 1px #333846; text-decoration: none; color: #ECEEF3">
+        <span style="width: 40px; height: 40px; flex: none; border-radius: 13px; background: #F5B57A; color: #0A0B10; font-weight: 600; font-size: 13px; display: flex; align-items: center; justify-content: center">AK</span>
+        <span style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px"><span><mark>Gauge</mark> report and updated shelter agreement</span><span style="font-size: 13px; color: #9198A8; white-space: nowrap; overflow: hidden; text-overflow: ellipsis"><mark>Anna</mark> Kowalska · today’s <mark>gauge</mark> report…</span></span>
+        <span style="font-size: 13px; color: #9198A8">Today</span>
+      </a>
+      <a href="#" style="display: flex; gap: 14px; align-items: center; padding: 12px 16px; border-radius: 14px; text-decoration: none; color: #ECEEF3">
+        <span style="width: 40px; height: 40px; flex: none; border-radius: 13px; background: #F5B57A; color: #0A0B10; font-weight: 600; font-size: 13px; display: flex; align-items: center; justify-content: center">AK</span>
+        <span style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px"><span><mark>Gauge</mark> report 17 Nov</span><span style="font-size: 13px; color: #9198A8"><mark>Anna</mark> Kowalska · level steady at 3.4 m</span></span>
+        <span style="font-size: 13px; color: #9198A8">Tue</span>
+      </a>
+      <a href="#" style="display: flex; gap: 14px; align-items: center; padding: 12px 16px; border-radius: 14px; text-decoration: none; color: #ECEEF3">
+        <span style="width: 40px; height: 40px; flex: none; border-radius: 13px; background: #F5B57A; color: #0A0B10; font-weight: 600; font-size: 13px; display: flex; align-items: center; justify-content: center">AK</span>
+        <span style="flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px"><span>Corrected <mark>gauge</mark> report (sensor 2)</span><span style="font-size: 13px; color: #9198A8"><mark>Anna</mark> Kowalska · now uses sensor 2</span></span>
+        <span style="font-size: 13px; color: #9198A8">Mon</span>
+      </a>
+
+      <div style="font-size: 13px; font-weight: 500; color: #9198A8; padding: 12px 16px 8px">Files</div>
+      <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; padding: 0 4px">
+        <sc-for list="{{files}}" as="f" hint-placeholder-count="3">
+          <a href="#" style="display: flex; flex-direction: column; gap: 6px; padding: 16px; border-radius: 14px; background: #161922; border: 1px solid #262A35; text-decoration: none; color: #ECEEF3">
+            <span style="font-weight: 500; font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">{{f.name}}</span>
+            <span style="font-size: 13px; color: #9198A8">PDF · {{f.meta}}</span>
+          </a>
+        </sc-for>
+      </div>
+
+      <div style="font-size: 13px; font-weight: 500; color: #9198A8; padding: 12px 16px 8px">Events</div>
+      <a href="WebCalendar.dc.html" style="display: flex; gap: 14px; align-items: center; padding: 12px 16px; border-radius: 14px; text-decoration: none; color: #ECEEF3">
+        <span style="width: 40px; height: 40px; flex: none; border-radius: 13px; background: #1E2230; display: flex; flex-direction: column; align-items: center; justify-content: center; font-size: 12px; line-height: 1.15"><span style="color: {{accent}}">Thu</span><strong>19</strong></span>
+        <span style="flex: 1">Shelter agreement review with legal <span style="color: #9198A8">· <mark>Anna</mark> · 14:00</span></span>
+      </a>
+
+      <div style="font-size: 13px; font-weight: 500; color: #9198A8; padding: 12px 16px 8px">Commands</div>
+      <sc-for list="{{commands}}" as="c" hint-placeholder-count="3">
+        <a href="#" style="display: flex; gap: 14px; align-items: center; padding: 12px 16px; border-radius: 14px; text-decoration: none; color: #ECEEF3">
+          <span style="width: 40px; height: 40px; flex: none; border-radius: 13px; border: 1px solid #333846; display: flex; align-items: center; justify-content: center; color: {{accent}}; font-weight: 600">›</span>
+          <span style="flex: 1">{{c.label}}</span>
+        </a>
+      </sc-for>
+    </div>
+    <div style="display: flex; gap: 20px; padding: 14px 24px; border-top: 1px solid #1E2129; font-size: 13px; color: #9198A8; flex-wrap: wrap">
+      <span>↑↓ to move</span><span>Enter to open</span><span style="flex: 1"></span><span>7 results</span>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#8EA2FF","options":["#8EA2FF","#4FD1C5","#C6F06B","#F5A35C"]},"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const accent = this.props.accent ?? '#8EA2FF';
+    const on = 'height: 36px; padding: 0 14px; border-radius: 18px; border: 0; background: rgba(142,162,255,.16); color: #C9D1FF; font: 500 13px Geist, sans-serif';
+    const off = 'height: 36px; padding: 0 14px; border-radius: 18px; border: 1px solid #333846; background: transparent; color: #C3C8D4; font: 500 13px Geist, sans-serif';
+    const chips = [['All', true], ['Mail', false], ['Files', false], ['Events', false], ['from:anna', true], ['has:attachment', false]]
+      .map(([label, a]) => ({ label, style: a ? on : off }));
+    return {
+      accent, chips,
+      files: [{ name: 'gauge-report.pdf', meta: '212 KB · today' }, { name: 'gauge-report-17-Nov.pdf', meta: '198 KB · Tue' }, { name: 'gauge-report-16-Nov.pdf', meta: '204 KB · Mon' }],
+      commands: [{ label: 'Create filter from this search', key: 'Ctrl ⇧ F' }, { label: 'Book a meeting with Anna', key: 'Ctrl ⇧ B' }]
+    };
+  }
+}
+</script>
+</body>
+</html>

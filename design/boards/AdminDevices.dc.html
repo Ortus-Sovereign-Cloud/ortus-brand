@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Devices</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>/*type2*/
+body{margin:0;background:#0A0B10;color:#ECEEF3;font-family:Geist,system-ui,sans-serif}
+a{color:#A9B6FF}a:hover{color:#C9D1FF}
+</style>
+</helmet>
+<div style="display: flex; flex-direction: column; min-height: 900px; background: #0A0B10; color: #ECEEF3; font-family: Geist, system-ui, sans-serif; font-size: 15px">
+  <header style="display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-bottom: 1px solid #1E2129; flex-wrap: wrap">
+    <svg width="26" height="26" viewBox="0 0 48 48" aria-hidden="true"><path d="M22 30 L4 30 A18 18 0 0 1 22 12 Z" fill="{{accent}}"/><path d="M26 30 L26 12 A18 18 0 0 1 44 30 Z" fill="#6E86FF"/><rect x="4" y="34" width="40" height="5" rx="2.5" fill="#4FD1C5"/></svg>
+    <span style="font-weight: 600">Admin</span>
+    <span style="font: 500 12px 'Geist Mono', monospace; padding: 3px 8px; border-radius: 7px; background: #1E2230; color: #C3C8D4">DEVICES</span>
+    <span style="flex: 1"></span>
+    <button style="height: 36px; padding: 0 12px; border-radius: 10px; border: 1px solid #333846; background: transparent; color: #ECEEF3; font: 500 14px Geist, sans-serif">Policies · 6</button>
+    <button style="height: 36px; padding: 0 14px; border-radius: 10px; border: 0; background: {{accent}}; color: #0A0B10; font: 600 14px Geist, sans-serif">Enrol devices</button>
+  </header>
+  <main style="flex: 1; width: 100%; max-width: 1280px; margin: 0 auto; padding: 22px 16px; box-sizing: border-box; display: flex; flex-direction: column; gap: 14px">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 10px">
+      <sc-for list="{{kpis}}" as="k" hint-placeholder-count="5">
+        <div style="padding: 14px; border-radius: 16px; background: #11131A; border: 1px solid #1E2129; display: flex; flex-direction: column; gap: 4px"><span style="font: 500 12px 'Geist Mono', monospace; color: #9198A8">{{k.k}}</span><span style="font-size: 24px; font-weight: 600">{{k.v}}</span><span style="{{k.ds}}">{{k.d}}</span></div>
+      </sc-for>
+    </div>
+    <div style="display: flex; gap: 12px; flex-wrap: wrap">
+      <section aria-label="Device list" style="flex: 999 1 640px; min-width: 0; border-radius: 18px; background: #11131A; border: 1px solid #1E2129; overflow-x: auto">
+        <div style="min-width: 720px">
+          <div style="display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.2fr) 110px 120px 140px; gap: 12px; padding: 10px 16px; border-bottom: 1px solid #1E2129; font: 500 12px 'Geist Mono', monospace; color: #9198A8"><span>DEVICE</span><span>USER</span><span>OS</span><span>LAST SEEN</span><span>STATUS</span></div>
+          <sc-for list="{{devs}}" as="d" hint-placeholder-count="7">
+            <div style="{{d.row}}">
+              <span style="display: flex; flex-direction: column"><span style="font-weight: 500">{{d.n}}</span><span style="font-size: 13px; color: #9198A8">{{d.m}}</span></span>
+              <span style="color: #C3C8D4">{{d.u}}</span>
+              <span style="font: 500 13px 'Geist Mono', monospace; color: #9198A8">{{d.os}}</span>
+              <span style="font: 500 13px 'Geist Mono', monospace; color: #9198A8">{{d.t}}</span>
+              <span style="{{d.ss}}">{{d.s}}</span>
+            </div>
+          </sc-for>
+        </div>
+      </section>
+      <aside aria-label="Selected device" style="flex: 1 1 300px; max-width: 340px; padding: 16px; border-radius: 18px; background: #11131A; border: 1px solid #1E2129; display: flex; flex-direction: column; gap: 10px">
+        <span style="font: 500 12px 'Geist Mono', monospace; color: #FF9A92">NOT COMPLIANT</span>
+        <span style="font-weight: 600; font-size: 17px">WS-0291 · Sam Kim</span>
+        <span style="font-size: 14px; color: #C3C8D4; line-height: 1.5">Boot measurement doesn’t match image 1.4.2 (firmware changed). Sign-in to mail, chat and files is blocked until fixed.</span>
+        <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px">
+          <sc-for list="{{acts}}" as="a" hint-placeholder-count="6"><button style="{{a.s}}">{{a.n}}</button></sc-for>
+        </div>
+        <code style="padding: 10px; border-radius: 10px; background: #0A0B10; border: 1px solid #262A35; font: 13px 'Geist Mono', monospace; color: #C3C8D4; white-space: pre-wrap">osquery: SELECT * FROM usb_devices; → 1 unapproved storage device</code>
+        <span style="font-size: 13px; color: #9198A8">Powered by an osquery-based agent. Every action is written to the audit log.</span>
+      </aside>
+    </div>
+  </main>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#8EA2FF","options":["#8EA2FF","#4FD1C5","#C6F06B","#F5A35C"]},"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const accent = this.props.accent ?? '#8EA2FF';
+    const g = 'font-size: 13px; color: #6FE0D5', w = 'font-size: 13px; color: #F5B57A';
+    const kpis = [['DEVICES', '1,612', 'Ortus OS 1,402 · Windows 118 · macOS 92', 1], ['COMPLIANT', '98.4%', '26 need attention', 0], ['ON LATEST IMAGE', '91%', '1.4.3 rolling out · ring 2 of 3', 1], ['PHONES ENROLLED', '1,402', 'used for QR sign-in', 1], ['LOST / WIPED', '2', 'this month', 0]].map(([k, v, d, ok]) => ({ k, v, d, ds: ok ? g : w }));
+    const pill = (bg, c) => 'justify-self: start; font: 500 12px Geist Mono, monospace; padding: 3px 7px; border-radius: 6px; background: ' + bg + '; color: ' + c;
+    const OK = pill('rgba(79,209,197,.12)', '#6FE0D5'), BAD = pill('rgba(255,122,110,.12)', '#FF9A92'), MID = pill('rgba(245,163,92,.15)', '#F5B57A'), GREY = pill('#1E2230', '#C3C8D4');
+    const devs = [
+      ['WS-0417', 'ThinkPad T14 · 3rd floor', 'Olena Hrytsenko', 'Ortus 1.4.3', 'now', 'COMPLIANT', OK],
+      ['WS-0291', 'Dell Latitude 7450', 'Sam Kim', 'Ortus 1.4.2', '4 min', 'NOT COMPLIANT', BAD, true],
+      ['WS-0388', 'ThinkPad X1 · 2nd floor', 'Marek Nowak', 'Ortus 1.4.3', 'now', 'COMPLIANT', OK],
+      ['KIOSK-02', 'Lobby kiosk', 'Shared', 'Ortus 1.4.3', 'now', 'KIOSK MODE', GREY],
+      ['LT-1120', 'Framework 13', 'Ana Ferreira', 'Ortus 1.4.1', '3 d', 'UPDATE PENDING', MID],
+      ['PH-OH', 'iPhone 17', 'Olena Hrytsenko', 'iOS 26.1', 'now', 'COMPLIANT', OK],
+      ['LT-0902', 'ThinkPad T14', 'Pool laptop', 'Ortus 1.4.2', '12 d', 'LOST · LOCKED', BAD]
+    ].map(([n, m, u, os, t, s, ss, sel]) => ({ n, m, u, os, t, s, ss, row: 'display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.2fr) 110px 120px 140px; gap: 12px; align-items: center; padding: 10px 16px; border-bottom: 1px solid #1A1D25; ' + (sel ? 'background: #1A1D27; box-shadow: inset 2px 0 0 ' + accent : '') }));
+    const b = 'height: 38px; border-radius: 10px; border: 1px solid #333846; background: transparent; color: #ECEEF3; font: 500 14px Geist, sans-serif';
+    const acts = [['Re-measure', b], ['Push update', b], ['Run query', b], ['Message user', b], ['Lock now', 'height: 38px; border-radius: 10px; border: 1px solid rgba(245,163,92,.45); background: transparent; color: #F5B57A; font: 500 14px Geist, sans-serif'], ['Wipe (revoke key)', 'height: 38px; border-radius: 10px; border: 1px solid rgba(255,122,110,.45); background: transparent; color: #FF9A92; font: 500 14px Geist, sans-serif']].map(([n, s]) => ({ n, s }));
+    return { accent, kpis, devs, acts };
+  }
+}
+</script>
+</body>
+</html>

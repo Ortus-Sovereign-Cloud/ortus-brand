@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Mobile admin</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>/*type2*//*dense2*/
+body{margin:0}
+a{color:#A9B6FF}a:hover{color:#C9D1FF}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; position: relative; overflow: hidden; background: #0A0B10; color: #ECEEF3; font-family: Geist, system-ui, sans-serif; font-size: 15px; display: flex; flex-direction: column">
+  <header style="display: flex; align-items: center; gap: 6px; padding: 12px 8px 4px">
+    <a href="MobileInbox.dc.html" aria-label="Back" style="width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; color: #ECEEF3"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg></a>
+    <span style="flex: 1; font: 500 13px Geist, sans-serif; font-variant-numeric: tabular-nums; color: #9198A8">Ministry of [Name]</span>
+  </header>
+  <div style="padding: 0 16px; display: flex; flex-direction: column; gap: 14px">
+    <h1 style="margin: 0; font-size: 30px; font-weight: 600; letter-spacing: -.03em">Admin</h1>
+
+    <div style="padding: 16px; border-radius: 18px; background: #11131A; border: 1px solid #1E2129; display: flex; align-items: center; gap: 14px">
+      <span style="width: 48px; height: 48px; border-radius: 16px; background: rgba(79,209,197,.14); color: #6FE0D5; display: flex; align-items: center; justify-content: center"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="m5 12 5 5L20 7"/></svg></span>
+      <span style="flex: 1; display: flex; flex-direction: column; gap: 2px"><span style="font-weight: 600">All systems normal</span><span style="font-size: 13px; color: #9198A8">99.2% delivered · queue 12 · 2 things need you</span></span>
+    </div>
+
+    <span style="font: 500 13px Geist, sans-serif; font-variant-numeric: tabular-nums; color: #9198A8; padding-top: 4px">Needs you</span>
+    <a href="AdminDomains.dc.html" style="display: flex; flex-direction: column; gap: 10px; padding: 16px; border-radius: 16px; background: rgba(245,163,92,.08); border: 1px solid rgba(245,163,92,.3); text-decoration: none; color: #ECEEF3">
+      <span style="font: 500 13px Geist, sans-serif; font-variant-numeric: tabular-nums; color: #F5B57A">DMARC · ministry.example</span>
+      <span style="font-weight: 500">231 spoofed messages this fortnight. Switch DMARC to quarantine?</span>
+      <span style="display: flex; gap: 8px"><span style="height: 36px; padding: 0 14px; border-radius: 10px; background: {{accent}}; color: #0A0B10; display: flex; align-items: center; font-weight: 600; font-size: 13px">Show the record</span><span style="height: 36px; padding: 0 12px; border-radius: 10px; border: 1px solid #333846; display: flex; align-items: center; font-size: 13px">Later</span></span>
+    </a>
+    <a href="AdminUsers.dc.html" style="display: flex; flex-direction: column; gap: 10px; padding: 16px; border-radius: 16px; background: #11131A; border: 1px solid #262A35; text-decoration: none; color: #ECEEF3">
+      <span style="font: 500 13px Geist, sans-serif; font-variant-numeric: tabular-nums; color: #9198A8">Migration · old mail server</span>
+      <span style="font-weight: 500">2 mailboxes failed: wrong password on the old server</span>
+      <span style="font-size: 13px; color: {{accent}}">Email the owners a reconnect link →</span>
+    </a>
+
+    <span style="font: 500 13px Geist, sans-serif; font-variant-numeric: tabular-nums; color: #9198A8; padding-top: 4px">Quick actions</span>
+    <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px">
+      <sc-for list="{{actions}}" as="a" hint-placeholder-count="4">
+        <a href="{{a.href}}" style="display: flex; flex-direction: column; gap: 4px; padding: 14px 16px; border-radius: 16px; background: #11131A; border: 1px solid #1E2129; text-decoration: none; color: #ECEEF3"><span style="font-weight: 600">{{a.t}}</span><span style="font-size: 13px; color: #9198A8">{{a.d}}</span></a>
+      </sc-for>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#8EA2FF","options":["#8EA2FF","#4FD1C5","#C6F06B","#F5A35C"]},"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      accent: this.props.accent ?? '#8EA2FF',
+      actions: [
+        { t: 'Invite user', d: '1,560 of 1,600 seats', href: 'AdminUsers.dc.html' },
+        { t: 'Reset password', d: 'Send a link', href: 'AdminUsers.dc.html' },
+        { t: 'Suspend account', d: 'Lost device', href: 'AdminUsers.dc.html' },
+        { t: 'Mail queue', d: '12 waiting', href: 'AdminDeliverability.dc.html' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

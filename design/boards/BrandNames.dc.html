@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Name options</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Geist:wght@400;500;600&family=Geist+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+</style>
+</helmet>
+<div style="width: 1440px; height: 900px; box-sizing: border-box; padding: 56px 64px; background: #07080C; color: #ECEEF3; font-family: Geist, system-ui, sans-serif; display: flex; flex-direction: column; gap: 28px">
+  <div style="display: flex; align-items: flex-end; gap: 24px">
+    <div style="flex: 1; display: flex; flex-direction: column; gap: 8px">
+      <span style="font: 500 12px 'Geist Mono', monospace; color: #9198A8; letter-spacing: .08em">NAME</span>
+      <h1 style="margin: 0; font: 700 40px Unbounded, sans-serif; letter-spacing: -.02em">Ortus: where your workspace begins</h1>
+    </div>
+    <span style="max-width: 380px; font-size: 13px; color: #9198A8; line-height: 1.5">Trademark check needed before launch: Ortus Solutions (developer tools) uses the name in software.</span>
+  </div>
+
+  <div style="display: grid; grid-template-columns: 1.35fr 1fr 1fr; grid-template-rows: 1fr 1fr; gap: 14px; flex: 1">
+    <div style="grid-row: 1 / 3; padding: 32px; border-radius: 28px; background: linear-gradient(160deg, #141A33 0%, #0D0F17 60%); border: 1px solid {{accent}}; display: flex; flex-direction: column; gap: 18px">
+      <span style="align-self: flex-start; font: 500 11px 'Geist Mono', monospace; padding: 4px 10px; border-radius: 8px; background: {{accent}}; color: #0A0B10">CHOSEN</span>
+      <div style="display: flex; align-items: center; gap: 18px">
+        <svg style="flex: none" width="84" height="84" viewBox="0 0 48 48" role="img" aria-label="Ortus mark"><path d="M22 30 L4 30 A18 18 0 0 1 22 12 Z" fill="{{accent}}"/><path d="M26 30 L26 12 A18 18 0 0 1 44 30 Z" fill="#6E86FF"/><rect x="4" y="34" width="40" height="5" rx="2.5" fill="#4FD1C5"/></svg>
+        <span style="font: 700 88px Unbounded, sans-serif; letter-spacing: -.04em; line-height: 1">Ortus</span>
+      </div>
+      <span style="font: 500 22px Unbounded, sans-serif; color: #9198A8">Ортус · ortus.cc</span>
+      <p style="margin: 0; font-size: 17px; line-height: 1.55; color: #D6D9E1; max-width: 520px">Latin for “rising” and “origin”: the place something starts and grows from. Neutral in every European language, easy to say, and it reads the same in Latin and Cyrillic.</p>
+      <div style="display: flex; flex-direction: column; gap: 8px; margin-top: auto">
+        <span style="font-size: 14px; color: #6FE0D5">+ Short and pronounceable in all EU languages and Ukrainian</span>
+        <span style="font-size: 14px; color: #6FE0D5">+ The mark tells the story: a sun rising over ground you own</span>
+        <span style="font-size: 14px; color: #6FE0D5">+ ortus.cc and ortussuite.com look free</span>
+        <span style="font-size: 14px; color: #F5B57A">− ortus.com/.eu/.dev/.io taken; existing software company with the name</span>
+      </div>
+    </div>
+    <sc-for list="{{alts}}" as="a" hint-placeholder-count="4">
+      <div style="padding: 24px; border-radius: 24px; background: #11131A; border: 1px solid #1E2129; display: flex; flex-direction: column; gap: 10px">
+        <span style="font: 700 36px Unbounded, sans-serif; letter-spacing: -.03em">{{a.n}}</span>
+        <span style="font: 500 12px 'Geist Mono', monospace; color: #9198A8">{{a.o}}</span>
+        <span style="font-size: 14px; line-height: 1.5; color: #C3C8D4">{{a.m}}</span>
+        <span style="margin-top: auto; font-size: 13px; color: #F5B57A">{{a.r}}</span>
+      </div>
+    </sc-for>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#8EA2FF","options":["#8EA2FF","#4FD1C5","#C6F06B","#F5A35C"]},"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const accent = this.props.accent ?? '#8EA2FF';
+    const alts = [
+      { n: 'Kolovo', o: 'SLAVIC · OF THE CIRCLE', m: 'A community where everyone has a seat. kolovo.eu/.dev/.app/.io all free.', r: 'Backup option · no known conflict' },
+      { n: 'Keel', o: 'ENGLISH · SHIP’S SPINE', m: 'A stable foundation. keel.eu free, other short domains taken.', r: '− Open-source k8s tool named Keel' },
+      { n: 'Ridna', o: 'UKRAINIAN · OUR OWN', m: 'Strongest sovereignty message; ridna.eu/.dev/.io free.', r: '− Harder for Western EU buyers' },
+      { n: 'Tessera', o: 'LATIN · MOSAIC TILE', m: 'Every app a tile of one picture.', r: '− tessera.eu taken; a blockchain tool uses it' }
+    ];
+    return { accent, alts };
+  }
+}
+</script>
+</body>
+</html>
